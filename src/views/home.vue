@@ -26,10 +26,10 @@
     height: 100vh;
   }
   @include media('max', 'lg') {
-    @include media('max', 'sm') {
-      .home {
-        height: 568px;
-      }
+  }
+  @include media('max', 'sm') {
+    .home {
+      height: 568px;
     }
   }
 </style>

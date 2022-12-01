@@ -271,7 +271,7 @@
     }
   }
 
-  @include media('max', 'xl') {
+  @include media('max', 'lg') {
     .appendix {
       &.active {
         .appendix-images {
@@ -306,6 +306,7 @@
         @include flex(start, start, column);
         column-gap: 0px;
         height: 100vh;
+        min-height: 100vh;
       }
       &_item {
         position: relative;
@@ -323,7 +324,7 @@
         position: relative;
         @include flex(center, center);
         z-index: 22;
-        top: -0%;
+        top: 10%;
         height: 47%;
         margin: 0 auto;
       }
@@ -343,8 +344,7 @@
               height: 440px;
             }
           }
-          &:nth-child(even) {
-          }
+
           &:last-child {
             img {
               width: 460px;
