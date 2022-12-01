@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    
+   
+  }
+img {
+    max-width: 100%;
+    display: block;
+  }
+a{
+    text-decoration: none;
+    color: black;
+    
+}
+ul,ol{
+list-style: none;
+}
+
+textarea{
+    resize: none;
+}
+
+button,input,select,option{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+select{
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  &::-ms-expand{
+    display: none;
+  }
+}

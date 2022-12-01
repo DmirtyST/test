@@ -1,0 +1,65 @@
+$sizes: ("xs":320px, "sm":568px, "md":768px, "lg":1024px, "xl":1280px ,"xxl":1550px);
+@mixin media($minmax, $media) {
+  @each $size, $resolution in $sizes {
+    @if $media == $size {
+      @media only screen and (#{$minmax}-width: $resolution) {
+        @content;
+      }
+    }
+  }
+}
+@mixin size($sz,$ln,$sp:0,$wg:400) {
+   font-size: $sz;
+   line-height: $ln;
+   letter-spacing: $sp;
+   font-weight: $wg;
+  }
+
+@mixin  text ($position){
+  text-align: $position;
+  
+}
+@mixin flex($js-content,$a-items,$f-direction:row) {
+    display: flex;
+    justify-content:$js-content;
+    align-items: $a-items;
+    flex-direction:$f-direction;
+   
+
+}
+
+@mixin before($position:absolute,$content:'') {
+  &:before{
+  content: $content;
+  position: $position;
+  z-index: -1;
+  @content
+  }
+}
+@mixin after($position:absolute,$content:'') {
+  
+  &:after{
+  content: $content;
+  position: $position;
+  z-index: -1;
+  @content
+  }
+}
+
+@mixin roundedSize($size:0) {
+  width: $size;
+  height: $size;
+}
+
+@mixin grid ($colomn,$rows,$gap:0){
+  display: grid;
+  grid-template-columns:$colomn;
+  grid-template-rows: $rows;
+  column-gap: $gap;
+}
+@mixin  animate ($duration:0,$t-f,$delay:0) {
+  animation-duration: duration;
+  animation-timing-function: $t-f;
+  animation-delay: $delay;
+  
+}

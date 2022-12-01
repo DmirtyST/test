@@ -1,0 +1,58 @@
+{
+
+    
+
+    "screenPage":{
+    "title":"The   Mobile Payment Alliance for Seamless Wallet-to-Wallet Interoperability",
+    "text":"As an alliance partner, you will be able to instantly offer transfers to any other alliance partners. And your users will be able to pay overseas with their local mobile wallet.",
+    "titleTablet":"The Ivalut Mobile Payment Alliance for Seamless Wallet-to-Wallet Interoperability"
+
+},
+    "underPage":{
+    "title":"The Ivalut Mobile Payment Alliance for Seamless Wallet-to-Wallet Interoperability",
+    "text":"As an alliance partner, you will be able to instantly offer transfers to any other alliance partners. And your users will be able to pay overseas with their local mobile wallet."
+    },
+    "cooperationPage":{
+        "spanTitle":"Delight",
+        "title":" your users",
+        "text":"A faster and more convenient way to pay. Users of our alliance partners can directly receive and pay monies to each other irrespective of the payment operators, the country of origin or the country of destination.",
+        "textSub":"Devise the services of tomorrow Grow your business with new partnership opportunities. With seamless wallet-to-walle."
+        },
+    "benefistPage":{
+        "spanTitle":" happy.",
+        "title":" Make your clients ",
+        "text":"Payment systems that are part of this network receive a significant advantage over payment systems that are not part of it and encourage more and more providers to connect in order to be at the market level."
+        
+        
+},
+    "videoPage":{
+    "spanTitle":" can't be ",
+    "title":" It  ",
+    "titles": "more simple to work with",
+    "text":"Watch our video, with all process how it works!"
+    
+    
+},
+"appendixPage":{
+    "firstBox":{
+        "title":"Directory Layers",
+        "text":"Identify accounts"
+    },
+    "evenBox":{
+        "title":"Interoperability Layer",
+        "text":"Connects providers"
+    },
+    "lastBox":{
+        "title":"Settlement Layer",
+        "text":"Makes payments instant and irrevocable; and protect against fraud"
+    }
+    
+    
+}
+
+
+
+}
+
+
+
