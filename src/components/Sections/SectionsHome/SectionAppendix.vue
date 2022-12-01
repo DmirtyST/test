@@ -358,4 +358,16 @@
       }
     }
   }
+  @include media('max', 'md') {
+    .appendix {
+      &_images {
+        position: relative;
+        @include flex(center, center);
+        z-index: 22;
+        top: 1%;
+        height: 47%;
+        margin: 0 auto;
+      }
+    }
+  }
 </style>

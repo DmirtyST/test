@@ -136,8 +136,15 @@
         position: absolute;
         left: 50%;
         transform: translate(-50%, 15%);
-        bottom: -40%;
+        bottom: -25%;
         opacity: 0;
+      }
+    }
+  }
+  @include media('max', 'md') {
+    .under {
+      &_eclipse {
+        bottom: -45%;
       }
     }
   }

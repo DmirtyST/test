@@ -81,6 +81,32 @@
       }
     }
   }
+
+  @include media('max', 'lg') {
+    .under-circle {
+      width: 450px;
+      height: 350px;
+
+      &_item {
+        &:last-child {
+          bottom: 22%;
+        }
+      }
+    }
+  }
+  @include media('max', 'md') {
+    .under-circle {
+      width: 450px;
+      height: 200px;
+
+      &_item {
+        &:last-child {
+          right: 5%;
+          bottom: -5%;
+        }
+      }
+    }
+  }
   @include media('max', 'sm') {
     .under-circle {
       width: 450px;
