@@ -24,6 +24,16 @@
     flex: 1 1 auto;
   }
 
+  @media (max-height: '768px') {
+    .wrapper {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      scroll-snap-type: unset;
+      background-color: $black;
+    }
+  }
   @include media('max', 'sm') {
     .wrapper {
       height: auto;
