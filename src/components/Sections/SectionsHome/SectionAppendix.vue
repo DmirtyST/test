@@ -271,7 +271,7 @@
     }
   }
 
-  @include media('max', 'lg') {
+  @include media('max', 'xl') {
     .appendix {
       &.active {
         .appendix-images {
@@ -306,7 +306,6 @@
         @include flex(start, start, column);
         column-gap: 0px;
         height: 100vh;
-        min-height: 100vh;
       }
       &_item {
         position: relative;
@@ -358,15 +357,17 @@
       }
     }
   }
-  @include media('max', 'md') {
+  @include media('max', 'lg') {
     .appendix {
       &_images {
-        position: relative;
-        @include flex(center, center);
-        z-index: 22;
-        top: 1%;
+        top: 2%;
         height: 47%;
         margin: 0 auto;
+      }
+      &_row {
+        @include flex(start, start, column);
+        column-gap: 0px;
+        height: 1024px;
       }
     }
   }

@@ -13,8 +13,7 @@
 
 <style lang="scss" scoped>
   .wrapper {
-    height: 100vh;
-    padding-top: 5px;
+    height: auto;
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -24,6 +23,10 @@
   .page {
     flex: 1 1 auto;
   }
-  @include media('max', 'lg') {
+
+  @include media('max', 'sm') {
+    .wrapper {
+      height: auto;
+    }
   }
 </style>

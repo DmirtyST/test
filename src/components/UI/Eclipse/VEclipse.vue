@@ -27,8 +27,24 @@
 
 <style lang="scss" scoped>
   .figure {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     &_item {
       border-radius: 50%;
+      position: relative;
+      z-index: 0;
+    }
+  }
+  @include media('max', 'md') {
+    .figure {
+      padding: 0 0px;
+      &_item {
+        border-radius: 50%;
+      }
     }
   }
 </style>

@@ -35,7 +35,7 @@
       <VImg class="screen_bg" :sourse="bgImg" ps="cover" />
     </picture>
 
-    <VEclipse class="screen_eclipse" ref="obs" color="#55AC58" w="382" h="234" />
+    <VEclipse class="screen_eclipse" ref="obs" color="#55AC58" w="450" h="234" />
   </section>
 </template>
 
@@ -66,9 +66,10 @@
 
     &.active {
       .screen_eclipse {
-        transition: all ease 1s;
+        bottom: -25%;
         opacity: 1;
-        bottom: -188px;
+        transform: translateY(0%);
+        transition: all ease 0.6s;
       }
     }
     &_row {
@@ -103,15 +104,20 @@
     }
     &_eclipse {
       position: absolute;
-      bottom: -210px;
-      left: 50%;
+      bottom: -22%;
       opacity: 0;
-      transform: translate(-50%);
-      animation: circle 9s infinite linear;
+      transform: translateY(5%);
       transition: all ease 0.4s;
     }
+  }
 
-    &_sub {
+  @include media('min', 'xxl') {
+    .screen {
+      &.active {
+        .screen_eclipse {
+          bottom: -20%;
+        }
+      }
     }
   }
   @include media('max', 'lg') {
@@ -120,8 +126,18 @@
       padding-bottom: 10%;
       &.active {
         .screen_eclipse {
-          bottom: -160px;
+          bottom: -15%;
+          opacity: 1;
+          transform: translateY(0%);
+          transition: all ease 0.6s;
         }
+      }
+      &_eclipse {
+        position: absolute;
+        bottom: -22%;
+        opacity: 0;
+        transform: translateY(5%);
+        transition: all ease 0.4s;
       }
       &_bg {
         object-position: 55% 20%;
@@ -172,15 +188,10 @@
       }
       &.active {
         .screen_eclipse {
-          bottom: -20%;
+          bottom: -30%;
         }
       }
       &_eclipse {
-        position: absolute;
-        width: 272px;
-        height: 168px;
-        left: 50%;
-        transform: translateX(-70%);
       }
     }
   }

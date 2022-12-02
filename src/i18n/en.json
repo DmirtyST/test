@@ -10,8 +10,10 @@
 },
     "underPage":{
     "title":"The Ivalut Mobile Payment Alliance for Seamless Wallet-to-Wallet Interoperability",
-    "text":"As an alliance partner, you will be able to instantly offer transfers to any other alliance partners. And your users will be able to pay overseas with their local mobile wallet."
-    },
+    "text":"As an alliance partner, you will be able to instantly offer transfers to any other alliance partners. And your users will be able to pay overseas with their local mobile wallet.",
+    "titleTablet":"Leverage your competitors to help you to grow your business"
+
+},
     "cooperationPage":{
         "spanTitle":"Delight",
         "title":" your users",

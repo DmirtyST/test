@@ -45,7 +45,7 @@
       &:last-child {
         @include roundedSize(70px);
         right: 5%;
-        bottom: 0%;
+        bottom: -5%;
       }
     }
   }
@@ -57,78 +57,57 @@
       transform: translateX(10px) translateY(10px) rotate(45deg);
     }
   }
-  @include media('max', 'lg') {
-    .under-circle {
-      width: 450px;
-      height: 200px;
 
-      &_item {
-        &:first-child {
-          @include roundedSize(106px);
-          left: -5%;
-          top: -15%;
-        }
-        &:nth-child(even) {
-          @include roundedSize(56px);
-          right: -9%;
-          top: -8%;
-        }
-        &:last-child {
-          @include roundedSize(70px);
-          right: 5%;
-          bottom: -5%;
-        }
-      }
-    }
-  }
-
-  @include media('max', 'lg') {
-    .under-circle {
-      width: 450px;
-      height: 350px;
-
-      &_item {
-        &:last-child {
-          bottom: 22%;
-        }
-      }
-    }
-  }
   @include media('max', 'md') {
     .under-circle {
-      width: 450px;
-      height: 200px;
-
-      &_item {
-        &:last-child {
-          right: 5%;
-          bottom: -5%;
-        }
-      }
-    }
-  }
-  @include media('max', 'sm') {
-    .under-circle {
-      width: 450px;
-      height: 200px;
+      position: absolute;
+      width: 350px;
+      height: 230px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 22;
 
       &_item {
         position: absolute;
         animation: circle 5s alternate-reverse infinite linear;
         &:first-child {
-          @include roundedSize(106px);
-          left: -5%;
-          top: -15%;
+          @include roundedSize(70px);
+          left: 5%;
+          top: -5%;
         }
         &:nth-child(even) {
-          @include roundedSize(56px);
-          right: -9%;
+          @include roundedSize(46px);
+          right: 2%;
           top: -8%;
         }
         &:last-child {
-          @include roundedSize(70px);
-          right: 5%;
+          @include roundedSize(60px);
+          right: 30%;
           bottom: -5%;
+        }
+      }
+    }
+  }
+
+  @include media('max', 'sm') {
+    .under-circle {
+      height: 150px;
+      &_item {
+        &:first-child {
+          @include roundedSize(70px);
+          left: 5%;
+          top: 15%;
+        }
+        &:nth-child(even) {
+          @include roundedSize(37px);
+          right: 2%;
+          top: -5%;
+        }
+        &:last-child {
+          @include roundedSize(45px);
+          right: 30%;
+          bottom: -6%;
         }
       }
     }

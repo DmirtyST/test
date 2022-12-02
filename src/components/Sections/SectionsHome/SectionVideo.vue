@@ -119,11 +119,14 @@
     }
   }
 
-  @include media('max', 'lg') {
+  @include media('max', 'xl') {
     .section-video {
       &_row {
         @include flex(start, space-between, column-reverse);
         height: 100vh;
+      }
+      &_container {
+        padding-right: 0px;
       }
       &_item {
         @include flex(center, start, column);
@@ -162,6 +165,14 @@
 
           opacity: 1;
         }
+      }
+    }
+  }
+  @include media('max', 'lg') {
+    .section-video {
+      &_row {
+        @include flex(start, space-between, column-reverse);
+        height: 1024px;
       }
     }
   }

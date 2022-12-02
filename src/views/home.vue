@@ -26,6 +26,9 @@
     height: 100vh;
   }
   @include media('max', 'lg') {
+    .home {
+      height: 1024px;
+    }
   }
   @include media('max', 'sm') {
     .home {

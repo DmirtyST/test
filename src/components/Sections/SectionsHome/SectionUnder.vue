@@ -3,8 +3,8 @@
     <VImg :sourse="underBg" ps="cover" />
     <VContainer width="800">
       <div class="under_row">
+        <div class="under_cover"></div>
         <div class="under_item">
-          <div class="under_cover"></div>
           <ul class="under_title">
             <li>
               <VHtag tag="h2" size="xl">
@@ -13,23 +13,30 @@
             </li>
             <li>
               <VHtag tag="h1" size="xxl">
-                {{ $t('underPage.title') }}
+                {{ $t('underPage.titleTablet') }}
               </VHtag>
             </li>
           </ul>
           <div class="under_sub">
             <VTypography size="xl">{{ $t('underPage.text') }} </VTypography>
           </div>
-          <div class="under_tabletBox">
-            <VButton color="small">DOCUMENTATION</VButton>
-            <VButton class="under_button" color="main">Contact Sales</VButton>
-          </div>
+          <ul class="under_tabletBox">
+            <li><VButton color="small">DOCUMENTATION</VButton></li>
+            <li><VButton class="under_button" color="main">Contact Sales</VButton></li>
+          </ul>
         </div>
       </div>
     </VContainer>
     <AUnderCircle class="under_circle" ref="obs" />
 
-    <VEclipse ref="obs" class="under_eclipse" color="#55AC58" w="918" h="706" />
+    <ul class="under_eclipses">
+      <li>
+        <VEclipse ref="obs" class="under_eclipse" color="#55AC58" w="918" h="706" />
+      </li>
+      <li>
+        <VEclipse ref="obs" class="under_eclipse" color="#55AC58" w="516" h="340" />
+      </li>
+    </ul>
   </section>
 </template>
 
@@ -55,52 +62,53 @@
     position: relative;
     z-index: 1;
 
-    &_tabletBox {
-      width: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      opacity: 0.3;
-      margin-top: 30px;
-    }
     &.active {
-      .under_eclipse {
-        transition: all linear 0.6s;
-        transform: translate(-50%, 0%);
-        opacity: 1;
-      }
       .under_circle {
-        bottom: -0%;
         opacity: 1;
-        transition: 2s;
+        transition: ease 2s;
+        z-index: 22;
+        transform: translate(-50%, 0%);
+      }
+      .under_eclipse {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: all linear 0.6s;
+      }
+    }
+    &_circle {
+      transform: translate(-50%, 66%);
+      opacity: 0;
+    }
+    &_eclipses {
+      li {
+        &:first-child {
+          opacity: 1;
+        }
+        &:last-child {
+          opacity: 0;
+        }
       }
     }
     &_eclipse {
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, 15%);
-      bottom: -70%;
+      bottom: -50%;
+      transform: translateY(20%);
       opacity: 0;
-    }
-    &_circle {
-      bottom: -30%;
-      opacity: 0;
-    }
-    &_cover {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: $linearBlack;
     }
     &_row {
       @include flex(start, center, column);
       height: 100%;
       padding-top: 20%;
+      position: relative;
+      background: $linearBlack;
     }
 
+    &_item {
+      @include flex(center, center, column);
+      @include text(center);
+      gap: 50px;
+      mix-blend-mode: soft-light;
+      overflow: 0.3;
+    }
     &_title {
       li {
         &:first-child {
@@ -111,62 +119,21 @@
         }
       }
     }
-    &_item {
-      @include flex(center, center, column);
-      @include text(center);
-      gap: 50px;
-      position: relative;
+    &_tabletBox {
+      width: 100%;
+      @include flex(space-around, center);
+      margin-top: 30px;
+      display: none;
     }
   }
-  @include media('min', 'xxl') {
-    .under {
-      &_row {
-        @include flex(center, center, column);
-        height: 100%;
-        padding-top: 0%;
-      }
-      &_eclipse {
-        bottom: -65%;
-      }
-    }
-  }
+
   @include media('max', 'lg') {
     .under {
-      &_eclipse {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, 15%);
-        bottom: -25%;
-        opacity: 0;
-      }
-    }
-  }
-  @include media('max', 'md') {
-    .under {
-      &_eclipse {
-        bottom: -45%;
-      }
-    }
-  }
-  @include media('min', 'lg') {
-    .under {
       &_tabletBox {
-        display: none;
-      }
-    }
-  }
-  @include media('max', 'sm') {
-    .under {
-      &.active {
-        .under_eclipse {
-          transition: all linear 0.6s;
-          transform: translate(-50%, 60%);
-          opacity: 1;
-        }
+        display: flex;
       }
       &_row {
         @include flex(center, center, column);
-        height: 100%;
         padding-top: 0%;
       }
       &_title {
@@ -180,11 +147,85 @@
         }
       }
       &_eclipse {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, -25%);
         bottom: -50%;
-        opacity: 1;
+      }
+    }
+  }
+  @include media('max', 'md') {
+    .under {
+      &_tabletBox {
+        display: flex;
+      }
+      &_row {
+        @include flex(center, center, column);
+        padding-top: 0%;
+      }
+      &_title {
+        li {
+          &:first-child {
+            display: none;
+          }
+          &:last-child {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  @include media('max', 'sm') {
+    .under {
+      padding-bottom: 50px;
+      &_eclipses {
+        li {
+          &:first-child {
+            opacity: 0;
+          }
+          &:last-child {
+            opacity: 1;
+          }
+        }
+      }
+
+      &.active {
+        .under_eclipse {
+          opacity: 1;
+          transform: translateY(-20%);
+          transition: all linear 0.6s;
+        }
+      }
+      &_tabletBox {
+        display: flex;
+        margin-top: 0px;
+        li {
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+      &_row {
+        @include flex(center, center, column);
+        padding-top: 0%;
+      }
+      &_item {
+        gap: 15px;
+        padding-top: 35px;
+      }
+      &_title {
+        li {
+          &:first-child {
+            display: none;
+          }
+          &:last-child {
+            display: block;
+          }
+        }
+      }
+      &_eclipse {
+        bottom: -58%;
+        width: 200%;
+        transform: translateY(-5%);
+        left: -50%;
       }
     }
   }
