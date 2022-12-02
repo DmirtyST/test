@@ -13,20 +13,17 @@
 
 <style lang="scss" scoped>
   .wrapper {
-    height: auto;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;
     overflow: auto;
     scroll-snap-type: y mandatory;
     background-color: $black;
   }
   .page {
-    flex: 1 1 auto;
+    flex-grow: 1;
   }
 
   @media (max-height: '768px') {
     .wrapper {
-      height: auto;
       display: flex;
       flex-direction: column;
       overflow: auto;
