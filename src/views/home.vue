@@ -32,7 +32,7 @@
   }
   @include media('max', 'sm') {
     .home {
-      height: 568px;
+      height: auto;
     }
   }
 </style>

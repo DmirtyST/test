@@ -206,6 +206,7 @@
       &_row {
         @include flex(center, center, column);
         padding-top: 0%;
+        min-height: 668px;
       }
       &_item {
         gap: 15px;
