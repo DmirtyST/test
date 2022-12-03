@@ -27,7 +27,7 @@
       display: flex;
       flex-direction: column;
       overflow: auto;
-      scroll-snap-type: unset;
+
       background-color: $black;
     }
   }

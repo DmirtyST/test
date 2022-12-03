@@ -122,9 +122,9 @@
   }
   @include media('max', 'lg') {
     .screen {
-      height: auto;
       padding-top: 0%;
       padding-bottom: 10%;
+
       &.active {
         .screen_eclipse {
           bottom: -15%;
@@ -171,9 +171,7 @@
     .screen {
       padding-bottom: 0%;
       padding-top: 10px;
-      &_row {
-        min-height: 668px;
-      }
+
       &_title {
         margin-bottom: 15px;
       }
@@ -192,7 +190,7 @@
       }
       &.active {
         .screen_eclipse {
-          bottom: -30%;
+          bottom: -20%;
         }
       }
       &_eclipse {

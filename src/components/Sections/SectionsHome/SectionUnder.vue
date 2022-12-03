@@ -90,7 +90,7 @@
       }
     }
     &_eclipse {
-      bottom: -50%;
+      bottom: -70%;
       transform: translateY(20%);
       opacity: 0;
     }
@@ -206,7 +206,6 @@
       &_row {
         @include flex(center, center, column);
         padding-top: 0%;
-        min-height: 668px;
       }
       &_item {
         gap: 15px;
