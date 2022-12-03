@@ -32,12 +32,13 @@
   }
   @include media('max', 'sm') {
     .home {
-      height: 100vh;
+      height: 672px;
     }
   }
 
   @include media('max', 'xs') {
     .home {
+      min-height: 100vh;
     }
   }
 </style>

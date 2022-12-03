@@ -223,7 +223,7 @@
         }
       }
       &_eclipse {
-        bottom: -32%;
+        bottom: -42%;
         width: 200%;
         transform: translateY(-5%);
         left: -50%;
