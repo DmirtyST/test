@@ -33,7 +33,6 @@
   }
   @include media('max', 'sm') {
     .wrapper {
-      height: 100vh;
     }
   }
 </style>

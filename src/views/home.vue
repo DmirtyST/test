@@ -32,7 +32,7 @@
   }
   @include media('max', 'sm') {
     .home {
-      height: auto;
+      height: 100vh;
     }
   }
 

@@ -206,8 +206,7 @@
       &_row {
         @include flex(center, center, column);
         padding-top: 0%;
-        padding: 350px 0;
-        max-height: 100vh;
+        height: 100%;
       }
       &_item {
         gap: 15px;
@@ -224,7 +223,7 @@
         }
       }
       &_eclipse {
-        bottom: -22%;
+        bottom: -32%;
         width: 200%;
         transform: translateY(-5%);
         left: -50%;

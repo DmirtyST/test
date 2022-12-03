@@ -171,7 +171,6 @@
 
       &_row {
         height: 100%;
-        padding: 284px 0;
       }
       &_title {
         margin-bottom: 15px;
