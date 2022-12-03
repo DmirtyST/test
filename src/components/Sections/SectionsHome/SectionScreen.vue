@@ -73,8 +73,8 @@
       }
     }
     &_row {
-      height: 100%;
       @include flex(center, center, column);
+      height: 100%;
     }
     &_item {
       text-align: center;
@@ -153,9 +153,6 @@
         }
       }
       &_title {
-        margin-bottom: 45px;
-        position: relative;
-
         li {
           &:first-child {
             display: none;
@@ -172,6 +169,10 @@
       padding-bottom: 0%;
       padding-top: 10px;
 
+      &_row {
+        height: 100%;
+        padding: 284px 0;
+      }
       &_title {
         margin-bottom: 15px;
       }
