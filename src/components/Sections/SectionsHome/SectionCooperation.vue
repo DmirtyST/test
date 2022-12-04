@@ -237,4 +237,43 @@
       }
     }
   }
+  @include media('max', 'sm') {
+    .cooperation {
+      &_row {
+        @include flex(center, start);
+        height: 100%;
+
+        padding-top: 0px;
+        column-gap: 0px;
+      }
+      &_item {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &-images {
+        &_row {
+          height: 100%;
+          min-width: 326px;
+          max-width: 326px;
+        }
+
+        &_item {
+          &:first-child {
+            left: -7%;
+            top: 22%;
+          }
+          &:nth-child(even) {
+            right: -8%;
+            top: 36%;
+          }
+          &:last-child {
+            right: 27%;
+
+            bottom: 0%;
+          }
+        }
+      }
+    }
+  }
 </style>

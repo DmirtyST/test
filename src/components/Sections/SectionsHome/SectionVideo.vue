@@ -121,9 +121,10 @@
 
   @include media('max', 'xl') {
     .section-video {
+      height: 100%;
       &_row {
         @include flex(start, space-between, column-reverse);
-        height: 100vh;
+        height: 100%;
       }
       &_container {
         padding-right: 0px;
@@ -173,6 +174,13 @@
       &_row {
         @include flex(start, space-between, column-reverse);
         height: 1024px;
+      }
+    }
+  }
+  @include media('max', 'lg') {
+    .section-video {
+      &_row {
+        height: 672px;
       }
     }
   }

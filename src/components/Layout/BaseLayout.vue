@@ -34,6 +34,7 @@
   @include media('max', 'sm') {
     .wrapper {
       min-height: 100vh;
+      scroll-snap-type: unset;
     }
   }
 </style>

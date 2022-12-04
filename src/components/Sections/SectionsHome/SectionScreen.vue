@@ -20,9 +20,9 @@
           <div class="screen_sub">
             <VTypography size="xl">{{ $t('screenPage.text') }} </VTypography>
           </div>
-        </div>
-        <div class="screen_btn">
-          <VButton color="main">JOIN US NOW</VButton>
+          <div class="screen_btn">
+            <VButton color="main">JOIN US NOW</VButton>
+          </div>
         </div>
       </div>
     </VContainer>
@@ -69,6 +69,7 @@
         bottom: -25%;
         opacity: 1;
         transform: translateY(0%);
+
         transition: all ease 0.6s;
       }
     }
@@ -76,12 +77,16 @@
       @include flex(center, center, column);
       height: 100%;
     }
+    &_btn {
+      margin-top: 20px;
+    }
     &_item {
       text-align: center;
       position: relative;
       z-index: 22;
       @include flex(center, center, column);
-      margin-bottom: 65px;
+      gap: 45px;
+
       img {
         position: absolute;
         width: 575px;
@@ -90,7 +95,6 @@
       }
     }
     &_title {
-      margin-bottom: 45px;
       position: relative;
 
       li {
@@ -178,8 +182,11 @@
       &_bg {
         opacity: 0;
       }
+      &_btn {
+        margin-top: 15px;
+      }
       &_item {
-        margin-bottom: 35px;
+        gap: 20px;
         img {
           position: absolute;
           width: 285px;
@@ -190,7 +197,8 @@
       }
       &.active {
         .screen_eclipse {
-          bottom: -20%;
+          bottom: -26%;
+          padding: 0 20px;
         }
       }
       &_eclipse {

@@ -251,4 +251,100 @@
       }
     }
   }
+
+  @include media('max', 'sm') {
+    .benefist {
+      padding-top: 65px;
+      &_row {
+        @include flex(start, space-between, column-reverse);
+        height: 672px;
+      }
+      &-images {
+        &_radial {
+          @include roundedSize(110px);
+          position: absolute;
+          background: $radialGreen;
+          opacity: 0.05;
+          border-radius: 50%;
+          left: -37px;
+          top: -33px;
+
+          &:first-child {
+            @include roundedSize(140px);
+            animation: speed 4s linear infinite;
+          }
+          &:nth-child(2) {
+            @include roundedSize(120px);
+            animation: speed 2.5s linear infinite;
+            left: -27px;
+            top: -23px;
+          }
+        }
+        &_row {
+          position: relative;
+          height: 100%;
+          min-width: 660px;
+          max-width: 648px;
+        }
+        &_box {
+          width: 100%;
+          height: 333px;
+          position: relative;
+          transform: scale(0.4) translateY(90%);
+          opacity: 0;
+        }
+        &_bg {
+          width: 100%;
+          height: 200px;
+          top: 40%;
+          transform: translateY(-50%);
+        }
+        &_rounded {
+          position: absolute;
+        }
+        &_item {
+          position: absolute;
+          z-index: 22;
+          &:first-child {
+            width: 154px;
+            height: 189px;
+            left: 10px;
+            top: 0%;
+
+            .benefist-images_rounded {
+              @include roundedSize(219px);
+              left: -45px;
+              top: -55px;
+              position: relative;
+              z-index: 0;
+            }
+          }
+          &:nth-child(even) {
+            width: 135px;
+            height: 147px;
+            right: 10px;
+            bottom: 2%;
+            z-index: 22;
+            .benefist-images_rounded {
+              @include roundedSize(162px);
+              left: -15px;
+            }
+          }
+          &:nth-child(3) {
+            @include roundedSize(66px);
+            right: 33%;
+            top: 22%;
+          }
+        }
+      }
+      &_item {
+        @include flex(center, start, column);
+        height: 40%;
+      }
+      &_text {
+        max-width: 668px;
+        padding-left: 26px;
+      }
+    }
+  }
 </style>
