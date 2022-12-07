@@ -22,55 +22,95 @@
           <div class="appendix_bg">
             <VImg :sourse="appendixBg" ps="cover" />
           </div>
-          <div class="appendix_content">
-            <div class="appendix_box">
-              <div class="appendix_list">
-                <VHtag tag="h6" size="xs"><span>01</span> </VHtag>
-              </div>
+          <ul class="appendix_content">
+            <li class="appendix_box">
+              <ul class="appendix_list">
+                <li>
+                  <VHtag tag="h6" size="xs"><span>01</span> </VHtag>
+                </li>
+                <li>
+                  <VHtag tag="h5" size="xs"><span>01</span> </VHtag>
+                </li>
+              </ul>
               <div>
-                <div class="appendix_title">
-                  <VHtag size="md" tag="h4">{{
-                    $t('appendixPage.firstBox.title')
-                  }}</VHtag>
-                </div>
+                <ul class="appendix_title">
+                  <li>
+                    <VHtag size="md" tag="h4">{{
+                      $t('appendixPage.firstBox.title')
+                    }}</VHtag>
+                  </li>
+                  <li>
+                    <VHtag size="lg" tag="h3">{{
+                      $t('appendixPage.firstBox.title')
+                    }}</VHtag>
+                  </li>
+                </ul>
                 <div class="appendix_text">
                   <VTypography size="xl">{{
                     $t('appendixPage.firstBox.text')
                   }}</VTypography>
                 </div>
               </div>
-            </div>
-            <div class="appendix_box">
-              <div class="appendix_list">
-                <VHtag tag="h6" size="xs"><span>02</span></VHtag>
-              </div>
+            </li>
+            <li class="appendix_box">
+              <ul class="appendix_list">
+                <li>
+                  <VHtag tag="h6" size="xs"><span>02</span></VHtag>
+                </li>
+                <li>
+                  <VHtag tag="h5" size="xs"><span>02</span></VHtag>
+                </li>
+              </ul>
               <div>
-                <div class="appendix_title">
-                  <VHtag size="md" tag="h4">{{ $t('appendixPage.evenBox.title') }}</VHtag>
-                </div>
+                <ul class="appendix_title">
+                  <li>
+                    <VHtag size="md" tag="h4">{{
+                      $t('appendixPage.evenBox.title')
+                    }}</VHtag>
+                  </li>
+                  <li>
+                    <VHtag size="lg" tag="h3">{{
+                      $t('appendixPage.evenBox.title')
+                    }}</VHtag>
+                  </li>
+                </ul>
                 <div class="appendix_text">
                   <VTypography size="xl">{{
                     $t('appendixPage.evenBox.text')
                   }}</VTypography>
                 </div>
               </div>
-            </div>
-            <div class="appendix_box">
-              <div class="appendix_list">
-                <VHtag tag="h6" size="xs"><span>03</span></VHtag>
-              </div>
+            </li>
+            <li class="appendix_box">
+              <ul class="appendix_list">
+                <li>
+                  <VHtag tag="h6" size="xs"><span>03</span></VHtag>
+                </li>
+                <li>
+                  <VHtag tag="h5" size="xs"><span>03</span></VHtag>
+                </li>
+              </ul>
               <div>
-                <div class="appendix_title">
-                  <VHtag size="md" tag="h4">{{ $t('appendixPage.lastBox.title') }}</VHtag>
-                </div>
+                <ul class="appendix_title">
+                  <li>
+                    <VHtag size="md" tag="h4">{{
+                      $t('appendixPage.lastBox.title')
+                    }}</VHtag>
+                  </li>
+                  <li>
+                    <VHtag size="lg" tag="h3">{{
+                      $t('appendixPage.lastBox.title')
+                    }}</VHtag>
+                  </li>
+                </ul>
                 <div class="appendix_text">
                   <VTypography size="xl">{{
                     $t('appendixPage.lastBox.text')
                   }}</VTypography>
                 </div>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
           <div class="appendix_btn">
             <VButton color="transper">DOCUMENTATION</VButton>
           </div>
@@ -381,21 +421,47 @@
             }
             &:first-child {
               transform: translateY(-100px);
-              left: 35px;
-              top: 90px;
+              left: 30px;
+              top: 97px;
             }
             &:nth-child(even) {
-              top: 26px;
+              top: 43px;
               opacity: 1;
-              left: -58px;
+              left: -47px;
 
               transform: translate(70px);
             }
           }
         }
       }
+      &_list {
+        li {
+          &:first-child {
+            display: none;
+          }
+          &:last-child {
+            display: block;
+          }
+        }
+      }
+      &_box {
+        padding-top: 18px;
+        padding-bottom: 18px;
+        @include flex(start, start);
+        gap: 5px;
+        border-bottom: 1px solid rgba($white, 0.3);
+
+        &:last-child {
+          border-bottom: transparent;
+        }
+      }
+      &_content {
+        max-width: 100%;
+        padding: 0 39px;
+      }
       &_row {
         height: 771px;
+        min-height: 771px;
       }
       &-images {
         &_item {
@@ -404,41 +470,77 @@
         }
         &_img {
           img {
-            width: 260px;
-            height: 260px;
+            width: 255px;
+            height: 250px;
           }
           &:first-child {
             img {
-              width: 250px;
+              width: 265px;
               height: 240px;
             }
           }
 
           &:last-child {
             img {
-              width: 260px;
-              height: 260px;
+              width: 270px;
+              height: 280px;
             }
           }
         }
       }
+      &_centered {
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        @include roundedSize(0px);
+        width: 285px;
+        height: 259px;
+      }
       &_item {
-        height: 60%;
+        position: relative;
+        height: 54%;
+        border-top-right-radius: 38% 27%;
+        @include flex(center, center, column);
+        background-color: $green;
+        padding-top: 0px;
+        padding-bottom: 25px;
+        gap: 10px;
+        overflow: hidden;
+        z-index: 1;
       }
       &_images {
-        height: 40%;
-        top: 3%;
+        height: 46%;
+        top: 2%;
+        left: 3%;
+      }
+      &_title {
+        li {
+          &:first-child {
+            display: none;
+          }
+        }
       }
     }
   }
   @include media('min', 'sm') {
     .appendix {
-      &_content {
-        max-width: 80%;
-      }
-
       &_item {
         padding: 0 15px;
+      }
+      &_list {
+        li {
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+      &_title {
+        li {
+          &:last-child {
+            display: none;
+          }
+        }
       }
     }
   }

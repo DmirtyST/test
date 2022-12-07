@@ -93,6 +93,14 @@
   }
   @include media('max', 'sm') {
     .btn {
+      &_transper {
+        padding: 15px 32px;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 13px;
+        letter-spacing: 1px;
+        text-align: center;
+      }
       &_main {
         padding: 16px 35px;
         border: 1px solid $green;

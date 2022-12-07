@@ -177,10 +177,31 @@
       }
     }
   }
-  @include media('max', 'lg') {
+  @include media('max', 'sm') {
     .section-video {
+      height: auto;
       &_row {
-        height: 672px;
+        height: 568px;
+      }
+      &_centered {
+        top: 40%;
+
+        width: 285px;
+        height: 259px;
+      }
+      &_item {
+        gap: 20px;
+        padding-top: 40px;
+      }
+
+      &_figure {
+        border-top-right-radius: 0% 0%;
+        border-top-left-radius: 42% 50%;
+      }
+      &_btn {
+        @include roundedSize(58px);
+        position: relative;
+        z-index: 22;
       }
     }
   }

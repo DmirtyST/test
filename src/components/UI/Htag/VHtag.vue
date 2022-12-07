@@ -91,6 +91,7 @@
       &_lg {
         color: $white;
         @include size(20px, 24px, 0px, 600);
+        font-family: Avenir;
       }
       &_md {
         color: $white;
