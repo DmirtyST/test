@@ -9,7 +9,7 @@ function inObse() {
       ([{isIntersecting}], observerElement) => {
         isVisible.value = isIntersecting;
         if (isIntersecting) {
-         
+          stop()
         }
       },
     );

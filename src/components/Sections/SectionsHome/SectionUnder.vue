@@ -220,16 +220,6 @@
         @include flex(center, center, column);
         padding-top: 0%;
       }
-      &_title {
-        li {
-          &:first-child {
-            display: none;
-          }
-          &:last-child {
-            display: block;
-          }
-        }
-      }
     }
   }
 
@@ -237,7 +227,9 @@
     .under {
       height: 568px;
       min-height: 568px;
-
+      &_cover {
+        height: 90%;
+      }
       &_eclipses {
         li {
           &:first-child {
@@ -276,16 +268,7 @@
         gap: 15px;
         padding-top: 35px;
       }
-      &_title {
-        li {
-          &:first-child {
-            display: none;
-          }
-          &:last-child {
-            display: block;
-          }
-        }
-      }
+
       &_eclipse {
         bottom: -42%;
         width: 200%;

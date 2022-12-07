@@ -7,7 +7,10 @@
           <div class="benefist-images_row">
             <div class="benefist-images_box">
               <div class="benefist-images_item">
-                <VImg :sourse="benefistImg1" ps="contain" />
+                <picture>
+                  <source :srcset="benefistImgSm1" media="(max-width: 568px)" />
+                  <VImg :sourse="benefistImg1" ps="contain" />
+                </picture>
                 <div class="benefist-images_rounded">
                   <VImg ps="contain" :sourse="roundedImg" />
                 </div>
@@ -16,24 +19,38 @@
                 <div class="benefist-images_rounded">
                   <VImg ps="contain" :sourse="roundedImg" />
                 </div>
-                <VImg :sourse="benefistImg2" ps="contain" />
+                <picture>
+                  <source :srcset="benefistImgSm2" media="(max-width: 568px)" />
+                  <VImg :sourse="benefistImg2" ps="contain" />
+                </picture>
               </div>
               <div class="benefist-images_item">
                 <div class="benefist-images_radial"></div>
                 <div class="benefist-images_radial"></div>
                 <VImg :sourse="benefistImg3" ps="contain" />
               </div>
-              <VImg class="benefist-images_bg" :sourse="benefistLine" ps="contain" />
+              <picture>
+                <source :srcset="benefistLineSm" media="(max-width: 568px)" />
+                <VImg class="benefist-images_bg" :sourse="benefistLine" ps="contain" />
+              </picture>
             </div>
           </div>
         </div>
         <div ref="obs" class="benefist_item">
-          <div class="benefist_title">
-            <VHtag size="lg" tag="h3"
-              >{{ $t('benefistPage.title') }}
-              <span> {{ $t('benefistPage.spanTitle') }}</span></VHtag
-            >
-          </div>
+          <ul class="benefist_title">
+            <li>
+              <VHtag size="lg" tag="h3">
+                {{ $t('benefistPage.title') }}
+                <span> {{ $t('benefistPage.spanTitle') }}</span>
+              </VHtag>
+            </li>
+            <li>
+              <VHtag size="xl" tag="h2">
+                {{ $t('benefistPage.title') }}
+                <span> {{ $t('benefistPage.spanTitle') }}</span>
+              </VHtag>
+            </li>
+          </ul>
 
           <div class="benefist_text">
             <VTypography size="xl">
@@ -50,8 +67,11 @@
   import VImg from '../../UI/Img/VImg.vue';
   import benefistBg from '../../Image/benefistBg.png';
   import benefistLine from '../../Image/benefistLine.png';
+  import benefistLineSm from '../../Image/benefistLineSm.png';
   import benefistImg1 from '../../Image/benefistImg1.png';
+  import benefistImgSm1 from '../../Image/benefistImgSm1.png';
   import benefistImg2 from '../../Image/benefistImg2.png';
+  import benefistImgSm2 from '../../Image/benefistImgSm2.png';
   import benefistImg3 from '../../Image/benefistImg3.png';
   import VContainer from '../../UI/Container/VContainer.vue';
   import VHtag from '../../UI/Htag/VHtag.vue';
@@ -252,98 +272,110 @@
     }
   }
 
+  @include media('min', 'sm') {
+    .benefist {
+      &_title {
+        li {
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
   @include media('max', 'sm') {
     .benefist {
-      padding-top: 65px;
+      padding-top: 0px;
+      height: auto;
       &_row {
-        @include flex(start, space-between, column-reverse);
-        height: 672px;
+        height: 568px;
+        @include flex(center, center, column);
+        padding-bottom: 26px;
+      }
+      &_title {
+        li {
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+      &_item {
+        gap: 15px;
+      }
+      &_images {
+        top: 30px;
       }
       &-images {
         &_radial {
           @include roundedSize(110px);
-          position: absolute;
-          background: $radialGreen;
-          opacity: 0.05;
-          border-radius: 50%;
-          left: -37px;
-          top: -33px;
+          left: -22%;
+          top: -20%;
 
           &:first-child {
-            @include roundedSize(140px);
-            animation: speed 4s linear infinite;
+            @include roundedSize(65px);
           }
           &:nth-child(2) {
-            @include roundedSize(120px);
-            animation: speed 2.5s linear infinite;
-            left: -27px;
-            top: -23px;
+            @include roundedSize(50px);
+
+            left: -22%;
+            top: -20%;
           }
         }
+
         &_row {
           position: relative;
           height: 100%;
-          min-width: 660px;
-          max-width: 648px;
+          min-width: 215px;
+          max-width: 248px;
         }
-        &_box {
-          width: 100%;
-          height: 333px;
-          position: relative;
-          transform: scale(0.4) translateY(90%);
-          opacity: 0;
-        }
-        &_bg {
-          width: 100%;
-          height: 200px;
-          top: 40%;
-          transform: translateY(-50%);
-        }
-        &_rounded {
-          position: absolute;
-        }
+
         &_item {
-          position: absolute;
-          z-index: 22;
           &:first-child {
-            width: 154px;
-            height: 189px;
-            left: 10px;
-            top: 0%;
+            width: 100px;
+            height: 100px;
+            left: -20%;
+            top: 20%;
 
             .benefist-images_rounded {
-              @include roundedSize(219px);
-              left: -45px;
-              top: -55px;
+              @include roundedSize(120px);
+              left: -14%;
+              top: -27%;
               position: relative;
               z-index: 0;
             }
           }
           &:nth-child(even) {
-            width: 135px;
-            height: 147px;
-            right: 10px;
-            bottom: 2%;
-            z-index: 22;
+            width: 76px;
+            height: 120px;
+            right: -22%;
+            bottom: 38%;
             .benefist-images_rounded {
-              @include roundedSize(162px);
-              left: -15px;
+              @include roundedSize(109px);
+              left: -22%;
+              top: 15%;
             }
           }
           &:nth-child(3) {
-            @include roundedSize(66px);
-            right: 33%;
-            top: 22%;
+            @include roundedSize(40px);
+            right: 40%;
+            top: 30%;
+            opacity: 1;
           }
         }
       }
-      &_item {
-        @include flex(center, start, column);
-        height: 40%;
-      }
+
       &_text {
         max-width: 668px;
-        padding-left: 26px;
+        padding-left: 15px;
+      }
+    }
+  }
+
+  @include media('max', 'xs') {
+    .benefist {
+      &_text {
+        max-width: 100%;
       }
     }
   }
