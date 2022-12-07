@@ -63,3 +63,13 @@ $sizes: ("xs":320px, "sm":568px, "md":768px, "lg":1024px, "xl":1280px ,"xxl":155
   animation-delay: $delay;
   
 }
+
+@mixin  line ($width:0,$bg:$white,$height:1px){
+  position: absolute;
+  right: 0;
+  height: $height;
+  top: 50%;
+  transform: translateY(-50%);
+  width: $width;
+  background-color: $bg;
+}

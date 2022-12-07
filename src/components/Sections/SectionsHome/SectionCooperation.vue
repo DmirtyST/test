@@ -9,28 +9,51 @@
               <div class="cooperation-images_rounded">
                 <VImg ps="contain" :sourse="roundedImg" />
               </div>
-              <VImg
-                :sourse="cooperationImg1"
-                class="cooperation-images_img"
-                ps="contain"
-              />
+              <picture>
+                <source :srcset="cooperationImgSm1" media="(max-width: 568px)" />
+                <VImg
+                  :sourse="cooperationImg1"
+                  class="cooperation-images_img"
+                  ps="contain"
+                />
+              </picture>
             </div>
             <div class="cooperation-images_item">
               <div class="cooperation-images_rounded">
                 <VImg ps="contain" :sourse="roundedImg" />
               </div>
-              <VImg
-                :sourse="cooperationImg2"
-                class="cooperation-images_img"
-                ps="contain"
-              />
+              <picture>
+                <source :srcset="cooperationImgSm2" media="(max-width: 568px)" />
+                <VImg
+                  :sourse="cooperationImg2"
+                  class="cooperation-images_img"
+                  ps="contain"
+                />
+              </picture>
             </div>
             <div class="cooperation-images_item">
               <div class="cooperation-images_rounded">
                 <VImg ps="contain" :sourse="roundedImg" />
               </div>
+              <picture>
+                <source :srcset="cooperationImgSm3" media="(max-width: 568px)" />
+                <VImg
+                  :sourse="cooperationImg3"
+                  class="cooperation-images_img"
+                  ps="contain"
+                />
+              </picture>
+            </div>
+            <div class="cooperation-images_item">
               <VImg
-                :sourse="cooperationImg3"
+                :sourse="cooperationImgSm4"
+                class="cooperation-images_img"
+                ps="contain"
+              />
+            </div>
+            <div class="cooperation-images_item">
+              <VImg
+                :sourse="cooperationImgSm5"
                 class="cooperation-images_img"
                 ps="contain"
               />
@@ -63,6 +86,11 @@
   import cooperationImg1 from '../../Image/cooperationImg1.png';
   import cooperationImg2 from '../../Image/cooperationImg2.png';
   import cooperationImg3 from '../../Image/cooperationImg3.png';
+  import cooperationImgSm1 from '../../Image/cooperationImgSm1.png';
+  import cooperationImgSm2 from '../../Image/cooperationImgSm2.png';
+  import cooperationImgSm3 from '../../Image/cooperationImgSm3.png';
+  import cooperationImgSm4 from '../../Image/cooperationImgSm4.png';
+  import cooperationImgSm5 from '../../Image/cooperationImgSm5.png';
   import useObserver from '../../../Mixins/useObserver.js';
   import roundedImg from '../../Image/rounded.png';
   const {isVisible, obs, inObse} = useObserver();
@@ -134,7 +162,7 @@
             left: 20px;
           }
         }
-        &:nth-child(even) {
+        &:nth-child(2) {
           height: 166px;
           width: 143px;
           right: 0;
@@ -145,7 +173,7 @@
             top: 7px;
           }
         }
-        &:last-child {
+        &:nth-child(3) {
           height: 140px;
           width: 168px;
           right: 19%;
@@ -205,31 +233,30 @@
         opacity: 0;
         visibility: hidden;
       }
-
+      &_images {
+        width: 100%;
+        height: 100%;
+      }
       &-images {
         &_row {
-          position: unset;
+          position: static;
           height: 100%;
         }
         &_rounded {
           position: relative;
         }
         &_item {
-          position: absolute;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           transform: scale(0.4);
           opacity: 0;
           &:first-child {
             left: 4%;
             top: 22%;
           }
-          &:nth-child(even) {
+          &:nth-child(2) {
             right: 7%;
             top: 36%;
           }
-          &:last-child {
+          &:nth-child(3) {
             right: 25%;
             bottom: 25%;
           }
@@ -237,40 +264,83 @@
       }
     }
   }
+  @include media('min', 'sm') {
+    .cooperation {
+      &-images {
+        &_item {
+          &:nth-child(4),
+          &:nth-child(5) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
   @include media('max', 'sm') {
     .cooperation {
-      &_row {
-        @include flex(center, start);
-        height: 100%;
-
-        padding-top: 0px;
-        column-gap: 0px;
-      }
-      &_item {
-        opacity: 0;
-        visibility: hidden;
+      height: 568px;
+      min-height: 568px;
+      scroll-snap-align: unset;
+      &.active {
+        .cooperation-images {
+          &_item {
+            &:nth-child(3) {
+              transform: scale(1) translateX(-50%);
+            }
+          }
+        }
       }
 
       &-images {
         &_row {
           height: 100%;
-          min-width: 326px;
-          max-width: 326px;
+          min-width: auto;
+          max-width: auto;
         }
-
         &_item {
           &:first-child {
-            left: -7%;
+            left: -1%;
             top: 22%;
+            width: 106px;
+            height: 151px;
+
+            .cooperation-images_rounded {
+              left: 12.5%;
+            }
           }
-          &:nth-child(even) {
-            right: -8%;
-            top: 36%;
+          &:nth-child(2) {
+            width: 100px;
+            height: 114px;
+            right: 1%;
+            top: 34%;
+            .cooperation-images_rounded {
+              @include roundedSize(112px);
+              right: -12%;
+              top: 9%;
+            }
+          }
+          &:nth-child(3) {
+            width: 101px;
+            height: 91px;
+            right: 0%;
+            left: 50%;
+            transform: scale(0.6) translateX(-50%);
+            bottom: 16%;
+            .cooperation-images_rounded {
+              top: -8%;
+              left: 4%;
+              @include roundedSize(81px);
+            }
+          }
+          &:nth-child(4) {
+            @include roundedSize(67px);
+            left: 4%;
+            bottom: 14.7%;
           }
           &:last-child {
-            right: 27%;
-
-            bottom: 0%;
+            right: 3.5%;
+            bottom: 24.7%;
+            @include roundedSize(65px);
           }
         }
       }

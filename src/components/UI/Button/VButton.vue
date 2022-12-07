@@ -66,18 +66,6 @@
     }
     &_small {
       @include size(10px, 12px, 1px, 500);
-      position: relative;
-      padding-right: 37px;
-      text-align: end;
-
-      @include before() {
-        width: 22px;
-        height: 1px;
-        background-color: $white;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-      }
     }
     &_transper {
       padding: 20px 45px;
@@ -114,16 +102,6 @@
       &_small {
         @include size(10px, 12px, 1px, 500);
         position: relative;
-        padding-right: 20px;
-
-        @include before() {
-          width: 10px;
-          height: 1px;
-          background-color: $white;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-        }
       }
     }
   }

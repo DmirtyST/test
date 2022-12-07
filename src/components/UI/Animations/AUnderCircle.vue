@@ -96,18 +96,18 @@
       &_item {
         &:first-child {
           @include roundedSize(70px);
-          left: 5%;
-          top: 15%;
+          left: 9%;
+          top: -22%;
         }
         &:nth-child(even) {
           @include roundedSize(37px);
-          right: 2%;
-          top: -5%;
+          right: 7%;
+          top: -30%;
         }
         &:last-child {
           @include roundedSize(45px);
-          right: 30%;
-          bottom: -6%;
+          right: 32%;
+          bottom: -4%;
         }
       }
     }

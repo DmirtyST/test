@@ -6,8 +6,13 @@
         <div class="header_logo">
           <VImg :sourse="logo" ps="contain" />
         </div>
-        <div class="header_btn">
-          <VButton color="small">JOIN US <span>NOW</span></VButton>
+        <div>
+          <VButton color="small"
+            ><div class="header_btn">
+              JOIN US <span>NOW</span>
+              <div class="header_line"></div>
+            </div>
+          </VButton>
         </div>
       </div>
     </VContainer>
@@ -60,6 +65,15 @@
       grid-template-columns: 1fr 1fr auto;
       align-items: center;
     }
+
+    &_btn {
+      position: relative;
+      padding-right: 37px;
+    }
+
+    &_line {
+      @include line(22px);
+    }
   }
 
   @include media('max', 'lg') {
@@ -67,6 +81,14 @@
       &_row {
         display: flex;
         justify-content: space-between;
+      }
+      &_btn {
+        position: relative;
+        padding-right: 20px;
+      }
+
+      &_line {
+        @include line(10px);
       }
     }
   }

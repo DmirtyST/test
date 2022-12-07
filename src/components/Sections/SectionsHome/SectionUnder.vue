@@ -3,8 +3,8 @@
     <VImg :sourse="underBg" ps="cover" />
     <VContainer width="800">
       <div class="under_row">
-        <div class="under_cover"></div>
         <div class="under_item">
+          <div class="under_cover"></div>
           <ul class="under_title">
             <li>
               <VHtag tag="h2" size="xl">
@@ -17,11 +17,22 @@
               </VHtag>
             </li>
           </ul>
-          <div class="under_sub">
-            <VTypography size="xl">{{ $t('underPage.text') }} </VTypography>
-          </div>
+          <ul class="under_sub">
+            <li>
+              <VTypography size="xl">{{ $t('underPage.text') }} </VTypography>
+            </li>
+            <li>
+              <VTypography size="xl">{{ $t('underPage.textTablet') }}</VTypography>
+            </li>
+          </ul>
           <ul class="under_tabletBox">
-            <li><VButton color="small">DOCUMENTATION</VButton></li>
+            <li>
+              <VButton color="small"
+                ><div class="under_button">
+                  DOCUMENTATION
+                  <div class="under_line"></div></div
+              ></VButton>
+            </li>
             <li><VButton class="under_button" color="main">Contact Sales</VButton></li>
           </ul>
         </div>
@@ -106,8 +117,21 @@
       @include flex(center, center, column);
       @include text(center);
       gap: 50px;
-      mix-blend-mode: soft-light;
-      overflow: 0.3;
+
+      position: relative;
+    }
+    &_cover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 80%;
+      background: linear-gradient(
+        180.46deg,
+        #181716 -15.09%,
+        rgba(24, 23, 22, 0) 652.35%
+      );
+      opacity: 0.96;
     }
     &_title {
       li {
@@ -119,14 +143,42 @@
         }
       }
     }
+    &_button {
+      position: relative;
+    }
+
+    &_line {
+      @include line(20px, $green);
+    }
     &_tabletBox {
+      mix-blend-mode: soft-light;
+      z-index: 2;
+      position: relative;
       width: 100%;
       @include flex(space-around, center);
       margin-top: 30px;
       display: none;
+      li {
+        &:first-child {
+          .under_button {
+            padding-right: 33px;
+          }
+        }
+      }
     }
   }
 
+  @include media('min', 'lg') {
+    .under {
+      &_sub {
+        li {
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
   @include media('max', 'lg') {
     .under {
       &_tabletBox {
@@ -146,6 +198,14 @@
           }
         }
       }
+      &_sub {
+        li {
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+
       &_eclipse {
         bottom: -50%;
       }
@@ -175,7 +235,9 @@
 
   @include media('max', 'sm') {
     .under {
-      padding-bottom: 50px;
+      height: 568px;
+      min-height: 568px;
+
       &_eclipses {
         li {
           &:first-child {
@@ -190,13 +252,14 @@
       &.active {
         .under_eclipse {
           opacity: 1;
-          transform: translateY(-20%);
+          transform: translateY(-9%);
           transition: all linear 0.6s;
         }
       }
       &_tabletBox {
         display: flex;
-        margin-top: 0px;
+        margin-top: 35px;
+        padding-left: 7px;
         li {
           &:last-child {
             display: none;
@@ -207,6 +270,7 @@
         @include flex(center, center, column);
         padding-top: 0%;
         height: 100%;
+        padding-bottom: 32%;
       }
       &_item {
         gap: 15px;
