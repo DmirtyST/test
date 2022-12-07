@@ -412,10 +412,15 @@
       height: auto;
       &.active {
         .appendix-images {
+          &_item {
+            transition: all ease 2s;
+            transform: translateY(0%) scale(1);
+            opacity: 1;
+          }
           &_img {
             top: 15%;
             left: 10%;
-
+            transition: all ease-in-out 2.5s;
             img {
               left: -80px;
             }
@@ -467,6 +472,7 @@
         &_item {
           right: 70px;
           top: 70px;
+          transform: translateY(0%) scale(0.3);
         }
         &_img {
           img {
