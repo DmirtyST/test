@@ -35,9 +35,7 @@
     }
     &_code {
       font-family: Fira Code;
-      font-size: 14px;
-      font-weight: 450;
-      line-height: 19px;
+      @include size(14px, 19px, 0px, 450);
       white-space: nowrap;
     }
   }
@@ -46,6 +44,10 @@
     .Typography {
       &_xl {
         @include size(13px, 20px, 0px, 400);
+      }
+
+      &_code {
+        @include size(13px, 18px, 0px, 450);
       }
     }
   }

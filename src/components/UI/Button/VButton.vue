@@ -81,11 +81,8 @@
       background-color: rgba($blackStrong, 0.3);
     }
     &_ofset {
+      @include size(12px, 15px, 2px, 500);
       font-family: Montserrat;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 15px;
-      letter-spacing: 2px;
       color: $white;
     }
   }
@@ -95,10 +92,8 @@
     .btn {
       &_transper {
         padding: 15px 32px;
-        font-size: 10px;
-        font-weight: 500;
-        line-height: 13px;
-        letter-spacing: 1px;
+        @include size(10px, 13px, 1px, 500);
+
         text-align: center;
       }
       &_main {
@@ -110,6 +105,10 @@
       &_small {
         @include size(10px, 12px, 1px, 500);
         position: relative;
+      }
+
+      &_ofset {
+        @include size(10px, 13px, 1px, 500);
       }
     }
   }

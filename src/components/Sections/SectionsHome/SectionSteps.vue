@@ -1,12 +1,19 @@
 <template>
   <div :class="isVisible === false ? 'section-steps' : 'section-steps active'">
     <VContainer width="1100">
-      <div class="section-steps_title">
-        <VHtag size="lg" tag="h3"
-          >Easy Connect. Move Money in
-          <div><span> 2 Steps.</span></div></VHtag
-        >
-      </div>
+      <ul class="section-steps_title">
+        <li>
+          <VHtag size="lg" tag="h3"
+            >Easy Connect. Move Money in
+            <div><span> 2 Steps.</span></div></VHtag
+          >
+        </li>
+        <li>
+          <VHtag size="xl" tag="h2"
+            >Easy Connect. Move Money <span> in 2 Steps.</span></VHtag
+          >
+        </li>
+      </ul>
       <div class="section-steps_row">
         <VTabs :selectedTab="selectedTab" :names="data" @changeTab="changeTab">
           <div class="section-steps_step" v-if="selectedTab === 1">
@@ -15,7 +22,7 @@
                 <VButton color="ofset">Step 1 - Create Users</VButton>
               </div>
               <div class="step_button">
-                <p>COPY</p>
+                <p> <VButton color="ofset">COPY</VButton> </p>
                 <VSvg class="step_icon" id="copy" width="22" height="22" />
               </div>
             </div>
@@ -104,6 +111,7 @@
           </div>
         </VTabs>
       </div>
+
       <div class="section-steps_btn">
         <VButton color="gray">Text copied</VButton>
       </div>
@@ -195,7 +203,6 @@
     }
 
     &_step {
-      padding: 20px;
       border-radius: 7px;
       background-color: #1e1d1c;
       color: $white;
@@ -263,33 +270,33 @@
       }
 
       &:first-child {
-        width: 8ch;
-        animation: printed-text 1.5s steps(8), flashing-border 0.7s step-end backwards;
+        width: 9ch;
+        animation: printed-text 1.5s steps(9), flashing-border 0.7s step-end backwards;
         animation-play-state: paused;
       }
       &:nth-child(2) {
-        width: 29ch;
-        animation: printed-text 3s steps(29) 1s normal both,
-          flashing-border 0.7s step-end 1.2s 4 normal both;
+        width: 30ch;
+        animation: printed-text 3s steps(30) 1s normal both,
+        flashing-border 0.7s step-end 1.2s 4 normal both;
 
         animation-play-state: paused;
       }
       &:nth-child(3) {
-        width: 26ch;
-        animation: printed-text 3s steps(26) 3s normal both,
+        width: 27ch;
+        animation: printed-text 3s steps(27) 3s normal both,
           flashing-border 0.7s step-end 4s 3 normal both;
         animation-play-state: paused;
       }
       &:nth-child(4) {
-        width: 18ch;
-        animation: printed-text 3s steps(18) 5s normal both,
+        width: 20ch;
+        animation: printed-text 3s steps(20) 5s normal both,
           flashing-border 0.7s step-end 6s 3 normal both;
         animation-play-state: paused;
       }
       &:nth-child(5) {
         width: 31ch;
         animation: printed-text 3s steps(31) 6.6s normal both,
-          flashing-border 0.7s step-end 7.5s 3 normal both;
+          flashing-border 0.7s step-end 7s 3 normal both;
         animation-play-state: paused;
       }
       &:nth-child(6) {
@@ -299,8 +306,8 @@
         animation-play-state: paused;
       }
       &:nth-child(7) {
-        width: 8ch;
-        animation: printed-text 3s steps(8) 5.5s normal both;
+        width: 9ch;
+        animation: printed-text 3s steps(9) 5.5s normal both;
         animation-play-state: paused;
       }
       &:last-child {
@@ -357,12 +364,88 @@
 
   @include media('max', 'lg') {
     .section-steps {
-      height: 100vh;
-
+      height: auto;
+      padding-top: 0px;
       &_row {
-        @include grid(1fr, 325px, 40px);
+        display: flex;
+        flex-direction: column;
+
         margin-bottom: 33px;
       }
+      &_title {
+        span {
+          color: $green;
+          min-width: unset;
+        }
+        li {
+          &:first-child {
+            display: none;
+          }
+        }
+      }
     }
+  }
+  @include media('min', 'lg') {
+    .section-steps {
+      &_title {
+        li {
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @include media('max', 'sm') {
+    .section-steps {
+      height: auto;
+      min-height: 707px;
+      padding-top: 50px;
+      padding-bottom: 47px;
+      &.active {
+     
+      .section-steps_title {
+        transform: scale(1) translateY(-0%);
+        opacity: 1;
+        transition: all ease 1.5s;
+      }
+      
+    }
+      &_btn {
+        display: none;
+      }
+      &_step {
+        border-radius: 7px;
+        background-color: #1e1d1c;
+        color: $white;
+        padding: 25px 20px;
+        overflow-x: auto;
+      }
+      &_title {
+        margin-bottom: 33px;
+        @include size(10px, 13px, 1px, 500);
+        transform: scale(0.8) translateY(-80%);
+      }
+      &_row {
+        margin-bottom: 0px;
+
+        display: flex;
+      }
+    }
+  }
+
+  .step {
+    &_header {
+      @include flex(space-between, center);
+      margin-bottom: 15px;
+    }
+   
+    
+    &_lists {
+      counter-reset: ol-numbers;
+      @include flex(start, start, column);
+      gap: 4px;
+    }
+   
   }
 </style>

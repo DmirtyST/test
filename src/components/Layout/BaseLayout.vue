@@ -22,19 +22,14 @@
     flex-grow: 1;
   }
 
-  @media (max-height: '768px') {
+  @media (max-height: '1000px') {
     .wrapper {
       display: flex;
       flex-direction: column;
       overflow: auto;
-
+      scroll-snap-type: unset;
       background-color: $black;
     }
   }
-  @include media('max', 'sm') {
-    .wrapper {
-      min-height: 100vh;
-      scroll-snap-type: unset;
-    }
-  }
+ 
 </style>

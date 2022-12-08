@@ -468,6 +468,9 @@
         height: 771px;
         min-height: 771px;
       }
+      &_list {
+        top: 0px;
+      }
       &-images {
         &_item {
           right: 70px;
