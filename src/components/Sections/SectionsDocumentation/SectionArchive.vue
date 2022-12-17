@@ -107,6 +107,7 @@
       &_table {
         overflow-x: hidden;
         overflow: scroll;
+        scrollbar-color: transparent transparent;
       }
     }
   }
