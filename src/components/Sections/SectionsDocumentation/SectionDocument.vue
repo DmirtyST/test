@@ -42,7 +42,12 @@
       }
       &_table {
         scrollbar-color: #55ac58 #303030;
-        scrollbar-width: 10px;
+        ::-webkit-scrollbar-track-piece {
+          background-color: #303030;
+        }
+        ::-webkit-scrollbar-thumb {
+          background-color: #55ac58;
+        }
         overflow-x: scroll;
         padding-bottom: 40px;
       }
