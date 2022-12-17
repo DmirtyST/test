@@ -87,7 +87,7 @@
       }
     }
     &_open {
-      padding: 14px 20px;
+      padding: 14px 10px;
       width: 146px;
       height: 44px;
       overflow: hidden;
@@ -188,7 +188,7 @@
       top: 130px;
 
       &_open {
-        top: -10%;
+        top: -9.4%;
         left: unset;
         left: -49%;
         transition: all ease 1s;
