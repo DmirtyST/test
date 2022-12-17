@@ -2,7 +2,10 @@
   <VContainer width="1200">
     <aside :class="menu === false ? ' aside' : 'aside active'">
       <div class="aside_row">
-        <button @click="toggleMenu" class="aside_open">PAGE MENU</button>
+        <button @click="toggleMenu" class="aside_open">
+          <p>PAGE MENU</p>
+          <p>ClOSE</p>
+        </button>
 
         <ul class="aside_lists">
           <li class="aside_list" v-for="link in dataLink" :key="link.id">
@@ -53,6 +56,7 @@
       reqiured: true,
     },
   });
+
   const menu = ref(false);
   const toggleMenu = () => {
     menu.value = !menu.value;
@@ -66,18 +70,49 @@
     width: 340px;
     top: 173px;
     z-index: 9999;
-
+    &.active {
+      .aside_open {
+        p {
+          &:first-of-type {
+            transform: translate(-50%, 250%);
+            visibility: hidden;
+            opacity: 0;
+          }
+          &:last-of-type {
+            transform: translate(-50%, -50%);
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
     &_open {
       padding: 14px 20px;
+      width: 146px;
       height: 44px;
+      overflow: hidden;
       background-color: $green;
       position: absolute;
       cursor: pointer;
       top: 0;
-      left: -33%;
+      left: -43%;
       font-family: Montserrat;
       @include size(10px, 12px, 1px, 500);
       color: $white;
+      p {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all ease 0.4s;
+        &:first-of-type {
+        }
+        &:last-of-type {
+          transform: translate(-50%, -250%);
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
     }
 
     &_row {
@@ -149,15 +184,18 @@
 
   @include media('max', 'sm') {
     .aside {
+      width: 300px;
       top: 130px;
+
       &_open {
-        top: -9.5%;
-        left: -33%;
-        transition: all ease 0.4s;
+        top: -10%;
+        left: unset;
+        left: -49%;
+        transition: all ease 1s;
       }
       &.active {
         .aside_open {
-          left: 66.7%;
+          left: 0;
         }
       }
     }
