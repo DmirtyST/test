@@ -24,7 +24,7 @@
       default: [],
     },
     select: {
-      type: Function,
+      type: Boolean,
     },
     activeSelect: {
       type: Function,
@@ -38,6 +38,7 @@
     @include size(10px, 12px, 1px, 500);
     text-transform: uppercase;
     color: $white;
+    background-color: $black;
     &.active {
       .select_option {
         visibility: visible;
@@ -58,7 +59,7 @@
       height: 5px;
     }
     &_option {
-      padding-top: 10px;
+      padding-top: 7px;
       position: absolute;
       top: 100%;
       left: 0;

@@ -1,7 +1,7 @@
 <template>
-  <VContainer width="1200">
-    <aside :class="menu === false ? ' aside' : 'aside active'">
-      <div class="aside_row">
+  <div class="aside-container">
+    <aside  :class="menu === false ? ' aside' : 'aside active'">
+      <div :class="currentSection === 'platform' ? ' aside_row' : 'aside_row active'">
         <button @click="toggleMenu" class="aside_open">
           <p>PAGE MENU</p>
           <p>ClOSE</p>
@@ -33,11 +33,11 @@
         </div>
       </div>
     </aside>
-  </VContainer>
+  </div>
 </template>
 
 <script setup>
-  import {ref} from 'vue';
+  import {ref,onMounted} from 'vue';
   import VTypography from '../UI/Typography/VTypography.vue';
   const dataLink = [
     {id: 1, name: 'iValut  Platform - Technical...', path: 'platform'},
@@ -61,6 +61,25 @@
   const toggleMenu = () => {
     menu.value = !menu.value;
   };
+  onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        let adBox = entry.target;
+        if (entry.intersectionRatio > 0) {
+          currentSection.value = adBox.getAttribute('id');
+        }
+      });
+    },
+    {
+      rootMargin:'0px  0px -90% 0px'
+    },
+  );
+  document.querySelectorAll('section').forEach((section) => {
+    observer.observe(section);
+  });
+});
+  
 </script>
 
 <style lang="scss" scoped>
@@ -68,9 +87,9 @@
     position: fixed;
     height: 100vh;
     width: 340px;
-    top: 173px;
+    top: 200px;
     z-index: 9999;
-
+    
     &.active {
       .aside_open {
         p {
@@ -115,6 +134,12 @@
     &_row {
       width: 100%;
       position: relative;
+      transition: bottom ease 0.8s;
+      bottom: 0;
+      &.active{
+       bottom: 100px;
+        transition: bottom ease .8s;
+      }
     }
     &_link {
       color: rgba($white, 0.5);
@@ -167,15 +192,26 @@
   @include media('max', 'xl') {
     .aside {
       top: 100px;
+      height: max-content;
       right: 0;
       transition: all ease 0.6s;
-      height: max-content;
-      padding-bottom: 20px;
+      z-index: 999;
       transform: translateX(100%);
+
+      &_row{
+        padding-bottom: 20px;
+        background-color: $black;
+        overflow-y: auto;
+        position: static;
+        &.active{
+       bottom: unset;
+      }
+      }
       &.active {
         transform: translateX(0%);
-        background-color: $black;
+        
       }
+      
     }
   }
 
@@ -185,12 +221,11 @@
         width: 117px;
         height: 44px;
       }
-
       width: 300px;
       top: 130px;
       transition: all ease 1s;
       &_open {
-        top: -9.4%;
+        top: -9%;
         left: unset;
         left: -39.4%;
         transition: all ease 1s;

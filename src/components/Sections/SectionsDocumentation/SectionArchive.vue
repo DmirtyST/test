@@ -75,7 +75,6 @@
       'Storage of source codes, Terraform scripts, Python Lambda Function codes',
     ],
   };
-  const tableSizeColums = '180px 149px 1fr';
 </script>
 
 <style lang="scss" scoped>

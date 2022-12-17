@@ -22,7 +22,6 @@
   import VTableRow from '../../UI/Table/VTableRow.vue';
   const headerTable = ['Version', 'Description', 'Author', 'Date'];
   const rowTable = ['1.0', 'Initial Document', 'Terry Lee', '01 Aug 2019'];
-  const tableSizeColums = '162px 200px 150px 140px';
 </script>
 
 <style lang="scss" scoped>

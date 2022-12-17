@@ -16,7 +16,7 @@
 
   const props = defineProps({
     header: {
-      type: String,
+      type:Array,
       required: false,
     },
     column: {

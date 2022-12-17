@@ -25,6 +25,7 @@
       </div>
     </div>
   </div>
+  <BaseFooterDoc />
 </template>
 
 <script setup>
@@ -40,12 +41,14 @@
   import SectionArchive from '../components/Sections/SectionsDocumentation/SectionArchive.vue';
   import useObserverLink from '../Mixins/useObserverLink.js';
   import VTypography from '../components/UI/Typography/VTypography.vue';
+  import BaseFooterDoc from '../components/Layout/BaseFooterDoc.vue';
   const {currentSection} = useObserverLink();
 </script>
 
 <style lang="scss" scoped>
   .documentation {
-    padding-top: 90px;
+    padding-top: 100px;
+   
     &_container {
       max-width: 1200px;
       margin: 0 auto;
@@ -63,6 +66,7 @@
 
     &_box {
       display: flex;
+
       gap: 10px;
       margin-bottom: 78px;
       color: white;

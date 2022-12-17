@@ -18,6 +18,7 @@ onMounted(() => {
   document.querySelectorAll('section').forEach((section) => {
     observer.observe(section);
   });
+ 
 });
  
   return {
