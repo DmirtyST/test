@@ -57,6 +57,10 @@
       &_doc {
         @include size(13px, 18px, 0px, 450);
       }
+
+      &_lg {
+        @include size(12px, 18px, 0px, 400);
+      }
     }
   }
 </style>

@@ -49,6 +49,7 @@
           background-color: #55ac58;
         }
         overflow-x: scroll;
+
         padding-bottom: 40px;
       }
     }

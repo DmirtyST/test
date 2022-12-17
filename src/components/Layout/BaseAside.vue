@@ -75,12 +75,12 @@
       .aside_open {
         p {
           &:first-of-type {
-            transform: translate(-50%, 250%);
+            transform: translateY(250%);
             visibility: hidden;
             opacity: 0;
           }
           &:last-of-type {
-            transform: translate(-50%, -50%);
+            transform: translateY(-0%);
             visibility: visible;
             opacity: 1;
           }
@@ -88,12 +88,12 @@
       }
     }
     &_open {
-      padding: 14px 10px;
       width: 146px;
       height: 44px;
       overflow: hidden;
       background-color: $green;
       position: absolute;
+      @include flex(center, center);
       cursor: pointer;
       top: 0;
       left: -43%;
@@ -102,13 +102,10 @@
       color: $white;
       p {
         position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transition: all ease 0.4s;
-
+        transition: all ease 0.6s;
+        width: 100%;
         &:last-of-type {
-          transform: translate(-50%, -250%);
+          transform: translateY(-250%);
           visibility: hidden;
           opacity: 0;
         }
@@ -171,7 +168,7 @@
     .aside {
       top: 100px;
       right: 0;
-      transition: all ease 1s;
+      transition: all ease 0.6s;
       height: max-content;
       padding-bottom: 20px;
       transform: translateX(100%);
@@ -184,13 +181,18 @@
 
   @include media('max', 'sm') {
     .aside {
+      &_open {
+        width: 117px;
+        height: 44px;
+      }
+
       width: 300px;
       top: 130px;
-
+      transition: all ease 1s;
       &_open {
         top: -9.4%;
         left: unset;
-        left: -49%;
+        left: -39.4%;
         transition: all ease 1s;
       }
       &.active {

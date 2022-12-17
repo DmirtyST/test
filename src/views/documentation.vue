@@ -2,9 +2,9 @@
   <div class="documentation_container">
     <div class="documentation">
       <ul class="documentation_box">
-        <li>Home</li>
-        <li>/</li>
-        <li>Documentation</li>
+        <li><VTypography size="lg">Home</VTypography></li>
+        <li><VTypography size="lg">/</VTypography></li>
+        <li><VTypography size="lg">Documentation</VTypography></li>
       </ul>
       <div class="documentation_row">
         <div class="documentation_content">
@@ -29,7 +29,6 @@
 
 <script setup>
   import BaseAside from '../components/Layout/BaseAside.vue';
-  import VContainer from '../components/UI/Container/VContainer.vue';
   import VHtag from '../components/UI/Htag/VHtag.vue';
   import SectionDocument from '../components/Sections/SectionsDocumentation/SectionDocument.vue';
   import SectionTechnology from '../components/Sections/SectionsDocumentation/SectionTechnology.vue';
@@ -40,6 +39,7 @@
   import SectionScope from '../components/Sections/SectionsDocumentation/SectionScope.vue';
   import SectionArchive from '../components/Sections/SectionsDocumentation/SectionArchive.vue';
   import useObserverLink from '../Mixins/useObserverLink.js';
+  import VTypography from '../components/UI/Typography/VTypography.vue';
   const {currentSection} = useObserverLink();
 </script>
 
@@ -66,6 +66,12 @@
       gap: 10px;
       margin-bottom: 78px;
       color: white;
+
+      li {
+        &:last-child {
+          opacity: 0.5;
+        }
+      }
     }
   }
 
@@ -89,6 +95,24 @@
       }
       &_title {
         padding-right: 15px;
+      }
+
+      &_box {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 90px;
+        color: white;
+      }
+    }
+  }
+
+  @include media('max', 'sm') {
+    .documentation {
+      &_box {
+        margin-bottom: 60px;
+      }
+      &_title {
+        margin-bottom: 30px;
       }
     }
   }
