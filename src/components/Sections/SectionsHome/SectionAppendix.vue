@@ -112,7 +112,9 @@
             </li>
           </ul>
           <div class="appendix_btn">
-            <VButton color="transper">DOCUMENTATION</VButton>
+            <router-link to="/documentation">
+              <VButton color="transper"> DOCUMENTATION </VButton>
+            </router-link>
           </div>
         </div>
       </div>
