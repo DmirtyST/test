@@ -70,6 +70,7 @@
     width: 340px;
     top: 173px;
     z-index: 9999;
+
     &.active {
       .aside_open {
         p {
@@ -105,8 +106,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
         transition: all ease 0.4s;
-        &:first-of-type {
-        }
+
         &:last-of-type {
           transform: translate(-50%, -250%);
           visibility: hidden;
@@ -171,7 +171,7 @@
     .aside {
       top: 100px;
       right: 0;
-      transition: all ease 0.4s;
+      transition: all ease 1s;
       height: max-content;
       padding-bottom: 20px;
       transform: translateX(100%);
