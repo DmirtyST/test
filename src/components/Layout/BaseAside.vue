@@ -1,7 +1,9 @@
 <template>
   <VContainer width="1200">
-    <aside class="aside">
+    <aside :class="menu === false ? ' aside' : 'aside active'">
       <div class="aside_row">
+        <button @click="toggleMenu" class="aside_open">PAGE MENU</button>
+
         <ul class="aside_lists">
           <li class="aside_list" v-for="link in dataLink" :key="link.id">
             <router-link :to="`#${link.path}`">
@@ -32,6 +34,7 @@
 </template>
 
 <script setup>
+  import {ref} from 'vue';
   import VTypography from '../UI/Typography/VTypography.vue';
   const dataLink = [
     {id: 1, name: 'iValut  Platform - Technical...', path: 'platform'},
@@ -50,6 +53,10 @@
       reqiured: true,
     },
   });
+  const menu = ref(false);
+  const toggleMenu = () => {
+    menu.value = !menu.value;
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -58,20 +65,33 @@
     height: 100vh;
     width: 340px;
     top: 173px;
-
     z-index: 9999;
 
+    &_open {
+      padding: 14px 20px;
+      height: 44px;
+      background-color: $green;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: -33%;
+      font-family: Montserrat;
+      @include size(10px, 12px, 1px, 500);
+      color: $white;
+    }
+
     &_row {
-      height: min-content;
       width: 100%;
+      position: relative;
     }
     &_link {
       color: rgba($white, 0.5);
       transition: all ease 0.6s;
       position: relative;
       overflow: hidden;
+      padding: 11px 18px;
+      height: 44px;
       padding-left: 36px;
-      margin: 8px 0px;
       &::before {
         content: '';
         position: absolute;
@@ -86,10 +106,8 @@
         background-color: $blackStrong;
         width: 100%;
         display: block;
-        padding-left: 0px;
         padding: 11px 18px;
         color: rgb(255, 255, 255);
-        margin: 15px 0px;
         &::before {
           top: 0;
         }
@@ -107,9 +125,41 @@
       width: 100%;
     }
   }
+  @include media('min', 'xl') {
+    .aside {
+      &_open {
+        display: none;
+      }
+    }
+  }
   @include media('max', 'xl') {
     .aside {
-      display: none;
+      top: 100px;
+      right: 0;
+      transition: all ease 0.4s;
+      height: max-content;
+      padding-bottom: 20px;
+      transform: translateX(100%);
+      &.active {
+        transform: translateX(0%);
+        background-color: $black;
+      }
+    }
+  }
+
+  @include media('max', 'sm') {
+    .aside {
+      top: 130px;
+      &_open {
+        top: -9.5%;
+        left: -33%;
+        transition: all ease 0.4s;
+      }
+      &.active {
+        .aside_open {
+          left: 66.7%;
+        }
+      }
     }
   }
 </style>
