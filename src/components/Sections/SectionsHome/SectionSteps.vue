@@ -22,7 +22,7 @@
                 <VButton color="ofset">Step 1 - Create Users</VButton>
               </div>
               <div class="step_button">
-                <p> <VButton color="ofset">COPY</VButton> </p>
+                <p><VButton color="ofset">COPY</VButton></p>
                 <VSvg class="step_icon" id="copy" width="22" height="22" />
               </div>
             </div>
@@ -158,7 +158,7 @@
 
 <style lang="scss" scoped>
   .section-steps {
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     scroll-snap-align: start;
     padding-top: 100px;
@@ -277,7 +277,7 @@
       &:nth-child(2) {
         width: 30ch;
         animation: printed-text 3s steps(30) 1s normal both,
-        flashing-border 0.7s step-end 1.2s 4 normal both;
+          flashing-border 0.7s step-end 1.2s 4 normal both;
 
         animation-play-state: paused;
       }
@@ -365,10 +365,18 @@
   @include media('max', 'lg') {
     .section-steps {
       height: auto;
-      padding-top: 0px;
+      min-height: 1024px;
+      padding-top: 80px;
+      max-width: 600px;
+      margin: 0 auto;
+      &_step {
+        min-height: 315px;
+      }
+      &_btn {
+        display: none;
+      }
       &_row {
-        display: flex;
-        flex-direction: column;
+        @include grid(1fr, auto);
 
         margin-bottom: 33px;
       }
@@ -400,20 +408,22 @@
     .section-steps {
       height: auto;
       min-height: 707px;
+      max-width: 100%;
+      margin: unset;
       padding-top: 50px;
       padding-bottom: 47px;
+
+      &_step {
+        min-height: auto;
+      }
       &.active {
-     
-      .section-steps_title {
-        transform: scale(1) translateY(-0%);
-        opacity: 1;
-        transition: all ease 1.5s;
+        .section-steps_title {
+          transform: scale(1) translateY(-0%);
+          opacity: 1;
+          transition: all ease 1.5s;
+        }
       }
-      
-    }
-      &_btn {
-        display: none;
-      }
+
       &_step {
         border-radius: 7px;
         background-color: #1e1d1c;
@@ -428,8 +438,6 @@
       }
       &_row {
         margin-bottom: 0px;
-
-        display: flex;
       }
     }
   }
@@ -439,13 +447,11 @@
       @include flex(space-between, center);
       margin-bottom: 15px;
     }
-   
-    
+
     &_lists {
       counter-reset: ol-numbers;
       @include flex(start, start, column);
       gap: 4px;
     }
-   
   }
 </style>

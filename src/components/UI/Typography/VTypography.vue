@@ -27,7 +27,7 @@
   .Typography {
     &_xl {
       font-family: Avenir;
-      @include size(18px, 24px, 0px, 400);
+      @include size(18px, 24px, 0px, 500);
     }
     &_lg {
       font-family: Avenir;
@@ -38,6 +38,11 @@
       @include size(14px, 19px, 0px, 450);
       white-space: nowrap;
     }
+    &_doc {
+      font-family: Fira Code;
+      word-wrap: break-word;
+      @include size(14px, 19px, 0px, 450);
+    }
   }
 
   @include media('max', 'sm') {
@@ -47,6 +52,9 @@
       }
 
       &_code {
+        @include size(13px, 18px, 0px, 450);
+      }
+      &_doc {
         @include size(13px, 18px, 0px, 450);
       }
     }

@@ -1,5 +1,10 @@
 <template>
-  <button :type="type" :disabled="disabled" :class="['btn', `btn_${color}`]">
+  <button
+    :type="type"
+    :style="{color: `${text}`}"
+    :disabled="disabled"
+    :class="['btn', `btn_${color}`]"
+  >
     <slot></slot>
   </button>
 </template>
@@ -17,6 +22,10 @@
     type: {
       type: String,
       default: 'submit',
+    },
+    text: {
+      type: String,
+      default: 'white',
     },
   });
 </script>
@@ -67,6 +76,7 @@
     &_small {
       @include size(10px, 12px, 1px, 500);
     }
+
     &_transper {
       padding: 20px 45px;
       border-radius: 62px;

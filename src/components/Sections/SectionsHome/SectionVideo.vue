@@ -124,7 +124,7 @@
       height: 100%;
       &_row {
         @include flex(start, space-between, column-reverse);
-        height: 100%;
+        height: 100vh;
       }
       &_container {
         padding-right: 0px;

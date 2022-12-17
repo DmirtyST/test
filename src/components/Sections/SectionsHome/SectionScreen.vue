@@ -26,14 +26,8 @@
         </div>
       </div>
     </VContainer>
-    <picture>
-      <source
-        :srcset="bgImgTblet"
-        sizes="(max-width: 1024px)"
-        media="(max-width: 768px)"
-      />
-      <VImg class="screen_bg" :sourse="bgImg" ps="cover" />
-    </picture>
+
+    <VImg class="screen_bg" :sourse="bgImg" ps="cover" />
 
     <VEclipse class="screen_eclipse" ref="obs" color="#55AC58" w="450" h="234" />
   </section>
@@ -47,7 +41,6 @@
   import centerImg from '../../Image/screenCenter.png';
   import VImg from '../../UI/Img/VImg.vue';
   import bgImg from '../../Image/background_dots.png';
-  import bgImgTblet from '../../Image/dotsTablet.png';
   import VEclipse from '../../UI/Eclipse/VEclipse.vue';
   import AEndlessCircle from '../../UI/Animations/AEndlessCircle.vue';
   import useObserver from '../../../Mixins/useObserver.js';
@@ -73,6 +66,7 @@
         transition: all ease 0.6s;
       }
     }
+
     &_row {
       @include flex(center, center, column);
       height: 100%;
@@ -145,8 +139,9 @@
         transition: all ease 0.4s;
       }
       &_bg {
-        object-position: 55% 20%;
+        object-position: 80% 10%;
       }
+
       &_item {
         max-width: 600px;
         img {

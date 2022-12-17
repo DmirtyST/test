@@ -5,18 +5,11 @@
       <div class="under_row">
         <div class="under_item">
           <div class="under_cover"></div>
-          <ul class="under_title">
-            <li>
-              <VHtag tag="h2" size="xl">
-                {{ $t('underPage.title') }}
-              </VHtag>
-            </li>
-            <li>
-              <VHtag tag="h1" size="xxl">
-                {{ $t('underPage.titleTablet') }}
-              </VHtag>
-            </li>
-          </ul>
+          <div class="under_title">
+            <VHtag tag="h2" size="xl">
+              {{ $t('underPage.title') }}
+            </VHtag>
+          </div>
           <ul class="under_sub">
             <li>
               <VTypography size="xl">{{ $t('underPage.text') }} </VTypography>
@@ -42,10 +35,10 @@
 
     <ul class="under_eclipses">
       <li>
-        <VEclipse ref="obs" class="under_eclipse" color="#55AC58" w="918" h="706" />
+        <VEclipse ref="obs" class="under_eclipse" color="#55AC58" w="710" h="434" />
       </li>
       <li>
-        <VEclipse ref="obs" class="under_eclipse" color="#55AC58" w="516" h="340" />
+        <VEclipse ref="obs" class="under_eclipse" color="#55AC58" w="918" h="716" />
       </li>
     </ul>
   </section>
@@ -93,10 +86,10 @@
     &_eclipses {
       li {
         &:first-child {
-          opacity: 1;
+          opacity: 0;
         }
         &:last-child {
-          opacity: 0;
+          opacity: 1;
         }
       }
     }
@@ -146,7 +139,9 @@
     &_button {
       position: relative;
     }
-
+    &_sub {
+      mix-blend-mode: soft-light;
+    }
     &_line {
       @include line(20px, $green);
     }
@@ -156,7 +151,8 @@
       position: relative;
       width: 100%;
       @include flex(space-around, center);
-      margin-top: 30px;
+      margin-top: 50px;
+      padding: 0 80px;
       display: none;
       li {
         &:first-child {
@@ -179,14 +175,21 @@
       }
     }
   }
+
   @include media('max', 'lg') {
     .under {
+      padding-bottom: 0px;
+      padding-top: 5px;
       &_tabletBox {
         display: flex;
       }
+
       &_row {
         @include flex(center, center, column);
         padding-top: 0%;
+      }
+      &_item {
+        gap: 35px;
       }
       &_title {
         li {
@@ -199,6 +202,7 @@
         }
       }
       &_sub {
+        max-width: 550px;
         li {
           &:first-child {
             display: none;
@@ -207,11 +211,11 @@
       }
 
       &_eclipse {
-        bottom: -50%;
+        bottom: -26.7%;
       }
     }
   }
-  @include media('max', 'md') {
+  @include media('max', 'xl') {
     .under {
       &_tabletBox {
         display: flex;
@@ -220,6 +224,16 @@
         @include flex(center, center, column);
         padding-top: 0%;
       }
+      &_eclipses {
+        li {
+          &:first-child {
+            opacity: 1;
+          }
+          &:last-child {
+            opacity: 0;
+          }
+        }
+      }
     }
   }
 
@@ -227,6 +241,7 @@
     .under {
       height: 568px;
       min-height: 568px;
+      padding-bottom: 0px;
       &_cover {
         height: 90%;
       }
@@ -251,7 +266,9 @@
       &_tabletBox {
         display: flex;
         margin-top: 35px;
+        padding: 0 0px;
         padding-left: 7px;
+
         li {
           &:last-child {
             display: none;

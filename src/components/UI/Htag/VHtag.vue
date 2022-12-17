@@ -23,10 +23,14 @@
 <style lang="scss" scoped>
   .Htag {
     font-family: Montserrat;
+    &_2xl {
+      @include size(65px, 75px, 0px, 600);
+      color: $white;
+    }
 
     &_xxl {
-      color: $white;
       @include size(65px, 75px, 0px, 600);
+      color: $white;
     }
     &_xl {
       color: $white;
@@ -53,6 +57,10 @@
   }
   @include media('max', 'lg') {
     .Htag {
+      &_2xl {
+        @include size(60px, 76px, 0px, 600);
+        color: $white;
+      }
       &_xxl {
         @include size(55px, 70px, 0px, 600);
         color: $white;
@@ -64,6 +72,11 @@
       &_lg {
         color: $white;
         @include size(38px, 44px, 0px, 600);
+      }
+      &_lgT {
+        color: $white;
+        @include size(30px, 38px, 0px, 600);
+        font-family: Avenir;
       }
       &_md {
         color: $white;
@@ -81,6 +94,9 @@
   }
   @include media('max', 'sm') {
     .Htag {
+      &_2xl {
+        @include size(28px, 42px, 0px, 600);
+      }
       &_xxl {
         @include size(28px, 42px, 0px, 600);
       }

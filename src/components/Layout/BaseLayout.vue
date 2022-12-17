@@ -22,7 +22,7 @@
     flex-grow: 1;
   }
 
-  @media (max-height: '1000px') {
+  @media (min-height: '768px') {
     .wrapper {
       display: flex;
       flex-direction: column;

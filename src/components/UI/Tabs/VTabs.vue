@@ -31,23 +31,25 @@
     </span>
   </div>
   <div v-if="selectedTab === 1" class="tab_stepsSm">
-    <div :class="selectedTab !== 1 ? 'tab_sub' : 'tab_sub selected'">
-      <VHtag tag="h3" size="lg">Register your User</VHtag>
+    <ul :class="selectedTab !== 1 ? 'tab_sub' : 'tab_sub selected'">
+      <li><VHtag tag="h3" size="lg">Register your User</VHtag></li>
+      <li><VHtag tag="h4" size="lgT">Register your User</VHtag></li>
       <VTypography size="xl">
         <div>Register your User with iValut. All we need is an identifier String.</div>
       </VTypography>
-    </div>
+    </ul>
   </div>
   <div v-if="selectedTab === 2" class="tab_stepsSm">
-    <div :class="selectedTab !== 2 ? 'tab_sub' : 'tab_sub selected'">
-      <VHtag tag="h3" size="lg">Move Money</VHtag>
+    <ul :class="selectedTab !== 2 ? 'tab_sub' : 'tab_sub selected'">
+      <li><VHtag tag="h3" size="lg">Move Money</VHtag></li>
+      <li><VHtag tag="h4" size="lgT">Move Money</VHtag></li>
       <VTypography size="xl">
         <div>
           Tell us the account name, payment gateway and the amount you want to send.That's
           it!
         </div>
       </VTypography>
-    </div>
+    </ul>
   </div>
   <slot />
 </template>
@@ -84,7 +86,7 @@
         }
       }
     }
-    &_stepsSm{
+    &_stepsSm {
       min-height: 140px;
     }
     &_icon {
@@ -168,6 +170,7 @@
     .tab {
       grid-template-columns: repeat(2, 50%);
       gap: 0px;
+      margin-top: 25px;
       &_name {
         display: none;
       }
@@ -179,13 +182,14 @@
         width: 100%;
         @include flex(center, center);
         background-color: rgba(#4c4a49, 0.2);
-        padding: 5px 0px;
+        padding: 15px 0px;
+       
         position: relative;
         z-index: 1;
-        span{
+        span {
           opacity: 0.3;
         }
-        &::before{
+        &::before {
           content: '';
           position: absolute;
           left: 0;
@@ -194,19 +198,16 @@
           height: 100%;
           background-color: $green;
           z-index: -1;
-          transition: all ease .4s;
+          transition: all ease 0.4s;
         }
         &.selected {
-
-          &::before{
-          width: 100%;
-        
-        }
+          &::before {
+            width: 100%;
+          }
 
           span {
             opacity: 1;
           }
-         
         }
       }
       &_row {
@@ -229,7 +230,7 @@
       &_button {
         @include flex(center, center);
         gap: 10px;
-        
+
         &.selected {
           .tab_icon {
             background-color: transparent;
@@ -241,10 +242,13 @@
       &_sub {
         opacity: 0;
         visibility: hidden;
-        padding: 30px 0px;
+        padding-top: 65px;
+        padding-bottom: 47px;
         @include flex(center, center, column);
         text-align: center;
         gap: 15px;
+
+       
         &.selected {
           opacity: 1;
           visibility: visible;
@@ -262,6 +266,56 @@
         padding: 0px 0;
         display: static;
         text-align: start;
+      }
+      &_stepsSm {
+        display: none;
+      }
+    }
+  }
+
+  @include media('min', 'sm') {
+    .tab {
+      &_sub {
+       
+        li {
+         &:nth-child(1){
+          display: none;
+         }
+
+        }
+        
+      }
+
+     
+    }
+  }
+
+  @include media('max', 'sm') {
+    .tab {
+      margin-top: 0px;
+      &_sub {
+        opacity: 0;
+        visibility: hidden;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding: 30px 0px;
+        @include flex(center, center, column);
+        text-align: center;
+        gap: 15px;
+        li {
+         &:nth-child(2){
+          display: none;
+         }
+
+        }
+        &.selected {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      &_stepsTablet {
+        display: none;
       }
     }
   }

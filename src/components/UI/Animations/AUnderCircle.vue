@@ -72,19 +72,19 @@
         position: absolute;
         animation: circle 5s alternate-reverse infinite linear;
         &:first-child {
-          @include roundedSize(70px);
-          left: 5%;
-          top: -5%;
+          @include roundedSize(105px);
+          left: -30%;
+          top: 5%;
         }
         &:nth-child(even) {
-          @include roundedSize(46px);
-          right: 2%;
-          top: -8%;
+          @include roundedSize(60px);
+          right: -26%;
+          top: 2%;
         }
         &:last-child {
-          @include roundedSize(60px);
-          right: 30%;
-          bottom: -5%;
+          @include roundedSize(70px);
+          right: -12%;
+          bottom: -12%;
         }
       }
     }
