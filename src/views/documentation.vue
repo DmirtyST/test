@@ -10,7 +10,9 @@
         <div class="documentation_content">
           <section id="platform" class="documentation_title">
             <strong></strong>
-            <VHtag size="xl" tag="h2">iValut Platform - Technical Development Plan</VHtag>
+            <VHtag size="xl" tag="h2">
+              {{ $t('documentation.title') }}
+            </VHtag>
           </section>
           <SectionDocument />
           <SectionGlossary />
@@ -48,7 +50,7 @@
 <style lang="scss" scoped>
   .documentation {
     padding-top: 100px;
-   
+
     &_container {
       max-width: 1200px;
       margin: 0 auto;

@@ -2,20 +2,16 @@
   <section id="archive" class="archive">
     <div class="archive_item">
       <div class="archive_sub-title">
-        <VHtag size="sm" tag="h5"> Tech Stack</VHtag>
+        <VHtag size="sm" tag="h5"> {{ $t('documentation.archive.title') }}</VHtag>
       </div>
       <div class="archive_sub">
         <VTypography size="xl">
-          While it is our every intention to use existing off-the-shelf software
-          components, we will not only need to glue code all those components into a
-          coherent platform offering, our core business logic would need to be developed
-          in-house. In this regards, Scala - Java, Slick.
+          {{ $t('documentation.archive.textFirst') }}
         </VTypography>
       </div>
       <div class="archive_sub">
         <VTypography size="xl">
-          The table below shows a non-exhaustive list of technologies we will be using.
-          Some of these technologies are provided by Amazon Web Services.
+          {{ $t('documentation.archive.textEven') }}
         </VTypography>
       </div>
     </div>
@@ -35,8 +31,7 @@
     </div>
     <div class="archive_sub">
       <VTypography size="xl">
-        We also extensively integrate 3rd party platforms into our system. These software
-        are non-exhaustively listed below
+        {{ $t('documentation.archive.textLast') }}
       </VTypography>
     </div>
   </section>
@@ -106,11 +101,11 @@
       &_table {
         overflow-x: hidden;
         overflow: scroll;
-        -ms-overflow-style: none; 
+        -ms-overflow-style: none;
         scrollbar-width: none;
         scrollbar-color: transparent transparent;
         ::-webkit-scrollbar {
-        display: none;
+          display: none;
         }
       }
     }

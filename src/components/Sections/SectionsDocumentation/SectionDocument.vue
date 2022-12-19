@@ -3,7 +3,7 @@
     <div class="document_title">
       <VHtag size="md" tag="h4">
         <Vnumber color="green">1.</Vnumber>
-        Document Version
+        {{ $t('documentation.doc.title') }}
       </VHtag>
     </div>
 
@@ -48,7 +48,7 @@
           background-color: #55ac58;
         }
         overflow-x: scroll;
-       
+
         padding-bottom: 40px;
       }
     }

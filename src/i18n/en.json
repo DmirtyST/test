@@ -1,61 +1,108 @@
 {
-
-    
-
-    "screenPage":{
-    "title":"The   Mobile Payment Alliance for Seamless Wallet-to-Wallet Interoperability",
-    "text":"As an alliance partner, you will be able to instantly offer transfers to any other alliance partners. And your users will be able to pay overseas with their local mobile wallet.",
-    "titleTablet":"The Ivalut Mobile Payment Alliance for Seamless Wallet-to-Wallet Interoperability"
-
-},
-    "underPage":{
-    "title":"The Ivalut Mobile Payment Alliance for Seamless Wallet-to-Wallet Interoperability",
-    "text":"As an alliance partner, you will be able to instantly offer transfers to any other alliance partners. And your users will be able to pay overseas with their local mobile wallet.",
-    "textTablet":"Ivalut helps your customers send/receive money from any mobile wallet providers seamlessly",
-    "titleTablet":"Leverage your competitors to help you to grow your business"
-
-},
-    "cooperationPage":{
-        "spanTitle":"Delight",
-        "title":" your users",
-        "text":"A faster and more convenient way to pay. Users of our alliance partners can directly receive and pay monies to each other irrespective of the payment operators, the country of origin or the country of destination.",
-        "textSub":"Devise the services of tomorrow Grow your business with new partnership opportunities. With seamless wallet-to-walle."
-        },
-    "benefistPage":{
-        "spanTitle":" happy.",
-        "title":" Make your clients ",
-        "text":"Payment systems that are part of this network receive a significant advantage over payment systems that are not part of it and encourage more and more providers to connect in order to be at the market level."
-        
-        
-},
-    "videoPage":{
-    "spanTitle":" can't be ",
-    "title":" It  ",
+  "screenPage": {
+    "title": "The   Mobile Payment Alliance for Seamless Wallet-to-Wallet Interoperability",
+    "text": "As an alliance partner, you will be able to instantly offer transfers to any other alliance partners. And your users will be able to pay overseas with their local mobile wallet.",
+    "titleTablet": "The Ivalut Mobile Payment Alliance for Seamless Wallet-to-Wallet Interoperability"
+  },
+  "underPage": {
+    "title": "The Ivalut Mobile Payment Alliance for Seamless Wallet-to-Wallet Interoperability",
+    "text": "As an alliance partner, you will be able to instantly offer transfers to any other alliance partners. And your users will be able to pay overseas with their local mobile wallet.",
+    "textTablet": "Ivalut helps your customers send/receive money from any mobile wallet providers seamlessly",
+    "titleTablet": "Leverage your competitors to help you to grow your business"
+  },
+  "cooperationPage": {
+    "spanTitle": "Delight",
+    "title": " your users",
+    "text": "A faster and more convenient way to pay. Users of our alliance partners can directly receive and pay monies to each other irrespective of the payment operators, the country of origin or the country of destination.",
+    "textSub": "Devise the services of tomorrow Grow your business with new partnership opportunities. With seamless wallet-to-walle."
+  },
+  "benefistPage": {
+    "spanTitle": " happy.",
+    "title": " Make your clients ",
+    "text": "Payment systems that are part of this network receive a significant advantage over payment systems that are not part of it and encourage more and more providers to connect in order to be at the market level."
+  },
+  "videoPage": {
+    "spanTitle": " can't be ",
+    "title": " It  ",
     "titles": "more simple to work with",
-    "text":"Watch our video, with all process how it works!"
-    
-    
-},
-"appendixPage":{
-    "firstBox":{
-        "title":"Directory Layers",
-        "text":"Identify accounts"
+    "text": "Watch our video, with all process how it works!"
+  },
+  "appendixPage": {
+    "firstBox": {
+      "title": "Directory Layers",
+      "text": "Identify accounts"
     },
-    "evenBox":{
-        "title":"Interoperability Layer",
-        "text":"Connects providers"
+    "evenBox": {
+      "title": "Interoperability Layer",
+      "text": "Connects providers"
     },
-    "lastBox":{
-        "title":"Settlement Layer",
-        "text":"Makes payments instant and irrevocable; and protect against fraud"
+    "lastBox": {
+      "title": "Settlement Layer",
+      "text": "Makes payments instant and irrevocable; and protect against fraud"
     }
-    
-    
+  },
+  "documentation": {
+    "title": " iValut Platform - Technical Development Plan",
+    "doc": {
+      "title": "Document Version"
+    },
+    "glossary": {
+      "title": "Glossary"
+    },
+    "introduction": {
+      "title": "Introduction",
+      "titleTwo": "Current Status",
+      "titleLast": "Scope of Document",
+      "textFirst": "The aim of this document is to share with stakeholders and other interested parties the technical aspects of the iValut Platform and also to outline the development plan and timeline to bring the product to fruition.",
+      "textTwo": "iValut already has a Proof-of-Concept backend and a demonstration mobile application. The conceptual backend is developed using Scala and classic PostgreSQL database, while the mobile application is an Android demostrator.",
+      "textThree": "Having proved interest in our value proposition, we are ready for the next phase of development to bring the product to market. Hence this document.",
+      "textFour": "This document will include information about the following",
+      "listFirst": "the technical architecture of the iValut Platform",
+      "listLast": "the outline plan and milestones in the development of the platform."
+    },
+    "statements": {
+      "title": "Problem statements",
+      "titleTwo": "Problem 1",
+      "titleThree": "Problem 2",
+      "titleLast": "Solution",
+      "textFirst": "Current payment platforms, event the biggest ones are localised. WeChat Pay [1] is clustered in China, Momo [2] in Vietnam and PayLah! [3] in Singapore are examples. There is no one system of payment platforms that have deep world-wide penetration.",
+      "textTwo": "Human mobility is global. We will most likely travel to a place where our primary mode of mobile payments are not widely adopted. Even if we want to sign on to the local platform, it may not be possible to do so due to local jurisdiction and financial rules.",
+      "textThree": "For example, an European with a Monzo [4] account travels to Vietnam and goes for a meal with his local friends. He finds out that it is impossible to split the bill with his friends because all of them are using the local Momo payment gateway. Monzo accounts are only available to Europe while Momo is localised to Vietnam. None of them can get onto each other platform. In the end, cash was used to split the bills.",
+      "textFour": "Even if it’s possible for the above person to join Momo (or vice versa), he will have to manage another wallet. Multiply this scenario a few times, he will end up having multiple accounts with disparate pots of monies.",
+      "textLast": "The iValut Platform provides for the cross integration of payment gateways so that each user can send monies to another person easily, regardless of their respective payment systems."
+    },
+    "technology": {
+      "title": "iValut Technology Platform",
+      "titleTwo": "Technical Philosophy",
+      "textFirst": "In modern enterprise systems designs, most components are already coded/designed and there are always best-in-class systems available, either commercially or in the open-sourced world. These components are very often well tested not just in terms of codes but also in terms of usability in the field. They are well supported both officially and by developers familiarity at large.",
+      "textEven": "In the development of the iValut Platform, we aim to avoid the not-created-here mentality. We strive to maintain technical agility by daving all components being replaceable.",
+      "textLast": "Through adopting these software components, we miminise our resources in solving common software requirements. This will allow us to stay focused to our value proposition of enabling the cross integration of payment platforms."
+    },
+    "archive": {
+      "title": "Tech Stack",
+      "textFirst": "While it is our every intention to use existing off-the-shelf software components, we will not only need to glue code all those components into a coherent platform offering, our core business logic would need to be developed in-house. In this regards, Scala - Java, Slick.",
+      "textEven": "The table below shows a non-exhaustive list of technologies we will be using. Some of these technologies are provided by Amazon Web Services.",
+      "textLast": "We also extensively integrate 3rd party platforms into our system. These software are non-exhaustively listed below"
+    },
+    "developments": {
+      "title": "Deployment",
+      "titleTwo": "Data Protocol",
+      "subTitle": "header",
+      "subTitleTwo": "payload",
+      "textFirst": "All iValut services are deployed and run in containers managed by AWS Fargate.",
+      "textEven": "The primary messaging format between iValut components is a modified variant of the JWT [17]. We will be using HS256 hash. A typical JWT token looks like this",
+      "textLast": "which translates to"
+    },
+    "scope": {
+      "title": "Scope of Document",
+      "titleSub": "The result is a JWT like",
+      "textFirst": "Conventional JWT code libraries can still be used to provide first level validation of the message. Enhanced security and validation will be taken care of by the specific recipient of the message.",
+      "textEven": " In the above iValut message, the iValut Message Integrity Component (see Components Architecture) would use conventional JWT code library would first validate the JWT that it has not been tampered with. Then it uses the otp_sig that the message is not a spoof. This dual-layered security decreases the surface area of attack at the message layer.",
+      "textLast": "This document will include information about the following",
+      "listFirst": "the technical architecture of the iValut Platform",
+      "listEven": "the outline plan and milestones in the development.",
+      "listLast": "the outline plan and milestones in the development of the platform."
+    }
+  }
+ 
 }
-
-
-
-}
-
-
-

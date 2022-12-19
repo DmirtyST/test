@@ -3,7 +3,7 @@
     <div class="glossary_title">
       <VHtag size="md" tag="h4">
         <Vnumber color="green">2.</Vnumber>
-        Glossary
+        {{ $t('documentation.glossary.title') }}
       </VHtag>
     </div>
     <div class="glossary_table">

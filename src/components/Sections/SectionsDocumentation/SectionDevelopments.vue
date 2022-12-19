@@ -2,22 +2,21 @@
   <section id="developments" class="developments">
     <div class="developments_item">
       <div class="developments_title">
-        <VHtag size="sm" tag="h5"> Deployment</VHtag>
+        <VHtag size="sm" tag="h5"> {{ $t('documentation.developments.title') }}</VHtag>
       </div>
       <div class="developments_sub">
         <VTypography size="xl">
-          All iValut services are deployed and run in containers managed by AWS Fargate.
+          {{ $t('documentation.developments.textFirst') }}
         </VTypography>
       </div>
     </div>
     <div class="developments_item">
       <div class="developments_title">
-        <VHtag size="sm" tag="h5"> Data Protocol</VHtag>
+        <VHtag size="sm" tag="h5"> {{ $t('documentation.developments.titleTwo') }}</VHtag>
       </div>
       <div class="developments_sub">
         <VTypography size="xl">
-          The primary messaging format between iValut components is a modified variant of
-          the JWT [17]. We will be using HS256 hash. A typical JWT token looks like this
+          {{ $t('documentation.developments.textEven') }}
         </VTypography>
       </div>
     </div>
@@ -30,10 +29,10 @@
       </VTypography>
     </ul>
     <div class="developments_sub-title">
-      <VTypography size="xl">which translates to</VTypography>
+      <VTypography size="xl">{{ $t('documentation.developments.textLast') }}</VTypography>
     </div>
     <div class="developments_code-title">
-      <VTypography size="xl">header</VTypography>
+      <VTypography size="xl">{{ $t('documentation.developments.subTitle') }}</VTypography>
     </div>
     <ul class="developments_code-box">
       <VTypography color="#EC4626" size="doc">
@@ -48,7 +47,9 @@
       </VTypography>
     </ul>
     <div class="developments_code-title">
-      <VTypography size="xl">payload</VTypography>
+      <VTypography size="xl">{{
+        $t('documentation.developments.subTitleTwo')
+      }}</VTypography>
     </div>
     <ul class="developments_code-box">
       <VTypography color="#EC4626" size="doc">

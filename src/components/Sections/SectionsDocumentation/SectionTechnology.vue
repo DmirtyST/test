@@ -3,38 +3,27 @@
     <div class="technology_title">
       <VHtag size="md" tag="h4">
         <Vnumber color="green">5.</Vnumber>
-        iValut Technology Platform
+        {{ $t('documentation.technology.title') }}
       </VHtag>
     </div>
 
     <div class="technology_item">
       <div class="technology_sub-title">
-        <VHtag size="sm" tag="h5"> Technical Philosophy</VHtag>
+        <VHtag size="sm" tag="h5">{{ $t('documentation.technology.titleTwo') }}</VHtag>
       </div>
       <div class="technology_sub">
         <VTypography size="xl">
-          In modern enterprise systems designs, most components are already coded/designed
-          and there are always best-in-class systems available, either commercially or in
-          the open-sourced world. These components are very often well tested not just in
-          terms of codes but also in terms of usability in the field. They are well
-          supported both officially and by developers familiarity at large.
+          {{ $t('documentation.technology.textFirst') }}
         </VTypography>
       </div>
       <div class="technology_sub">
         <VTypography size="xl">
-          Through adopting these software components, we miminise our resources in solving
-          common software requirements. This will allow us to stay focused to our value
-          proposition of enabling the cross integration of payment platforms.
+          {{ $t('documentation.technology.textEven') }}
         </VTypography>
       </div>
       <div class="technology_sub">
         <VTypography size="xl">
-          For example, an European with a Monzo [4] account travels to Vietnam and goes
-          for a meal with his local friends. He finds out that it is impossible to split
-          the bill with his friends because all of them are using the local Momo payment
-          gateway. Monzo accounts are only available to Europe while Momo is localised to
-          Vietnam. None of them can get onto each other platform. In the end, cash was
-          used to split the bills.
+          {{ $t('documentation.technology.textLast') }}
         </VTypography>
       </div>
     </div>

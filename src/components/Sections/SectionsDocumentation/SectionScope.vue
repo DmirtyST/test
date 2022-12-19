@@ -1,7 +1,7 @@
 <template>
   <section id="scope" class="scope">
     <div style="opacity: 0.5" class="scope_title">
-      <VTypography size="xl">The result is a JWT like</VTypography>
+      <VTypography size="xl"> {{ $t('documentation.scope.titleSub') }}</VTypography>
     </div>
     <ul class="scope_code-box">
       <VTypography size="doc">
@@ -23,52 +23,42 @@
     <div class="scope_item">
       <div class="scope_sub">
         <VTypography size="xl">
-          Conventional JWT code libraries can still be used to provide first level
-          validation of the message. Enhanced security and validation will be taken care
-          of by the specific recipient of the message.
+          {{ $t('documentation.scope.textFirst') }}
         </VTypography>
       </div>
       <div class="scope_sub">
         <VTypography size="xl">
-          In the above iValut message, the iValut Message Integrity Component (see
-          Components Architecture) would use conventional JWT code library would first
-          validate the JWT that it has not been tampered with. Then it uses the otp_sig
-          that the message is not a spoof. This dual-layered security decreases the
-          surface area of attack at the message layer.
+          {{ $t('documentation.scope.textEven') }}
         </VTypography>
       </div>
     </div>
 
     <div class="scope_item">
       <div class="scope_title">
-        <VHtag size="sm" tag="h5"> Scope of Document</VHtag>
+        <VHtag size="sm" tag="h5"> {{ $t('documentation.scope.title') }}</VHtag>
       </div>
       <div class="scope_sub">
         <VTypography size="xl">
-          This document will include information about the following
+          {{ $t('documentation.scope.textLast') }}
         </VTypography>
       </div>
       <ul class="scope_lists">
         <li class="scope_list">
           <Vnumber color="greenSm">1.</Vnumber>
           <VTypography size="xl">
-            <span>the technical architecture of the iValut Platform</span>
+            <span class="scope_text"> {{ $t('documentation.scope.listFirst') }}</span>
           </VTypography>
         </li>
         <li class="scope_list">
           <Vnumber color="greenSm">2.</Vnumber>
           <VTypography size="xl">
-            <span
-              >the outline plan and milestones in the development of the platform.</span
-            >
+            <span class="scope_text">{{ $t('documentation.scope.listEven') }}</span>
           </VTypography>
         </li>
         <li class="scope_list">
           <Vnumber color="greenSm">3.</Vnumber>
           <VTypography size="xl">
-            <span
-              >the outline plan and milestones in the development of the platform.</span
-            >
+            <span class="scope_text">{{ $t('documentation.scope.listLast') }}</span>
           </VTypography>
         </li>
       </ul>
@@ -101,9 +91,9 @@
       margin-bottom: 15px;
       @include flex(start, center);
       gap: 10px;
-      span {
-        opacity: 0.6;
-      }
+    }
+    &_text {
+      opacity: 0.6;
     }
     &_sub {
       opacity: 0.6;

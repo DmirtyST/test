@@ -3,43 +3,48 @@
     <div class="introduction_title">
       <VHtag size="md" tag="h4">
         <Vnumber color="green">3.</Vnumber>
-        Introduction
+        {{ $t('documentation.introduction.title') }}
       </VHtag>
     </div>
     <div class="introduction_sub">
       <VTypography size="xl">
-        The aim of this document is to share with stakeholders and other interested
-        parties the technical aspects of the iValut Platform and also to outline the
-        development plan and timeline to bring the product to fruition.
+        {{ $t('documentation.introduction.textFirst') }}
       </VTypography>
     </div>
     <div class="introduction_sub-title">
-      <VHtag size="sm" tag="h5"> Current Status </VHtag>
+      <VHtag size="sm" tag="h5">
+        {{ $t('documentation.introduction.titleTwo') }}
+      </VHtag>
     </div>
     <div class="introduction_sub">
       <VTypography size="xl">
-        iValut already has a Proof-of-Concept backend and a demonstration mobile
-        application. The conceptual backend is developed using Scala and classic
-        PostgreSQL database, while the mobile application is an Android demostrator.
+        {{ $t('documentation.introduction.textTwo') }}
+      </VTypography>
+    </div>
+    <div class="introduction_sub">
+      <VTypography size="xl">
+        {{ $t('documentation.introduction.textThree') }}
       </VTypography>
     </div>
     <div class="introduction_sub-title">
-      <VHtag size="sm" tag="h5"> Scope of Document </VHtag>
+      <VHtag size="sm" tag="h5">
+        {{ $t('documentation.introduction.titleLast') }}
+      </VHtag>
     </div>
     <div class="introduction_sub">
       <VTypography size="xl">
-        This document will include information about the following
+        {{ $t('documentation.introduction.textFour') }}
       </VTypography>
     </div>
     <ul class="introduction_lists">
       <li class="introduction_list">
         <VTypography size="xl">
-          the technical architecture of the iValut Platform
+          {{ $t('documentation.introduction.listFirst') }}
         </VTypography>
       </li>
       <li class="introduction_list">
         <VTypography size="xl">
-          the outline plan and milestones in the development of the platform.
+          {{ $t('documentation.introduction.listLast') }}
         </VTypography>
       </li>
     </ul>

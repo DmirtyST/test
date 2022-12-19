@@ -60,6 +60,12 @@
   const menu = ref(false);
   const toggleMenu = () => {
     menu.value = !menu.value;
+    if (menu.value === false) {
+      document.body.style.overflow = 'auto';
+    }
+    if (menu.value === true) {
+      document.body.style.overflow = 'hidden';
+    }
   };
 </script>
 
@@ -70,8 +76,9 @@
     width: 340px;
     top: 200px;
     z-index: 9999;
-
+    transition: top all ease 0.4s;
     &.active {
+      transition: top all ease 0.4s;
       .aside_open {
         p {
           &:first-of-type {
@@ -116,7 +123,7 @@
       width: 100%;
       position: relative;
       transition: bottom ease 0.8s;
-
+      bottom: 0;
       &.active {
         bottom: 100px;
         transition: bottom ease 0.8s;
@@ -207,15 +214,16 @@
 
   @include media('max', 'sm') {
     .aside {
+      padding-top: 100px;
       &_open {
         width: 117px;
         height: 44px;
       }
       width: 300px;
-      top: 130px;
+      top: 40px;
       transition: all ease 1s;
       &_open {
-        top: 6.9%;
+        top: 56px;
         left: unset;
         left: -39.4%;
         transition: all ease 1s;
