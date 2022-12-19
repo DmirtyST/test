@@ -106,7 +106,12 @@
       &_table {
         overflow-x: hidden;
         overflow: scroll;
+        -ms-overflow-style: none; 
+        scrollbar-width: none;
         scrollbar-color: transparent transparent;
+        ::-webkit-scrollbar {
+        display: none;
+        }
       }
     }
   }

@@ -12,7 +12,7 @@ onMounted(() => {
       });
     },
     {
-      rootMargin:'0px  0px -90% 0px'
+      rootMargin:'0%  0px -90% 0px'
     },
   );
   document.querySelectorAll('section').forEach((section) => {

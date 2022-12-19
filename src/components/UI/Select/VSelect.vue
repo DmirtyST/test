@@ -38,7 +38,7 @@
     @include size(10px, 12px, 1px, 500);
     text-transform: uppercase;
     color: $white;
-    background-color: $black;
+   
     &.active {
       .select_option {
         visibility: visible;

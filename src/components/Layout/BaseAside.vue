@@ -1,12 +1,12 @@
 <template>
   <div class="aside-container">
-    <aside  :class="menu === false ? ' aside' : 'aside active'">
-      <div :class="currentSection === 'platform' ? ' aside_row' : 'aside_row active'">
-        <button @click="toggleMenu" class="aside_open">
-          <p>PAGE MENU</p>
-          <p>ClOSE</p>
-        </button>
+    <aside :class="menu === false ? ' aside' : 'aside active'">
+      <button @click="toggleMenu" class="aside_open">
+        <p>PAGE MENU</p>
+        <p>ClOSE</p>
+      </button>
 
+      <div :class="currentSection === 'platform' ? ' aside_row' : 'aside_row active'">
         <ul class="aside_lists">
           <li class="aside_list" v-for="link in dataLink" :key="link.id">
             <router-link :to="`#${link.path}`">
@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-  import {ref,onMounted} from 'vue';
+  import {ref} from 'vue';
   import VTypography from '../UI/Typography/VTypography.vue';
   const dataLink = [
     {id: 1, name: 'iValut  Platform - Technical...', path: 'platform'},
@@ -61,25 +61,6 @@
   const toggleMenu = () => {
     menu.value = !menu.value;
   };
-  onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        let adBox = entry.target;
-        if (entry.intersectionRatio > 0) {
-          currentSection.value = adBox.getAttribute('id');
-        }
-      });
-    },
-    {
-      rootMargin:'0px  0px -90% 0px'
-    },
-  );
-  document.querySelectorAll('section').forEach((section) => {
-    observer.observe(section);
-  });
-});
-  
 </script>
 
 <style lang="scss" scoped>
@@ -89,7 +70,7 @@
     width: 340px;
     top: 200px;
     z-index: 9999;
-    
+
     &.active {
       .aside_open {
         p {
@@ -114,8 +95,8 @@
       position: absolute;
       @include flex(center, center);
       cursor: pointer;
-      top: 0;
-      left: -43%;
+      top: 100px;
+      left: -42.9%;
       font-family: Montserrat;
       @include size(10px, 12px, 1px, 500);
       color: $white;
@@ -135,10 +116,10 @@
       width: 100%;
       position: relative;
       transition: bottom ease 0.8s;
-      bottom: 0;
-      &.active{
-       bottom: 100px;
-        transition: bottom ease .8s;
+
+      &.active {
+        bottom: 100px;
+        transition: bottom ease 0.8s;
       }
     }
     &_link {
@@ -191,27 +172,36 @@
   }
   @include media('max', 'xl') {
     .aside {
-      top: 100px;
-      height: max-content;
+      padding-top: 100px;
+      top: 0;
+      bottom: 0;
       right: 0;
       transition: all ease 0.6s;
       z-index: 999;
       transform: translateX(100%);
-
-      &_row{
-        padding-bottom: 20px;
+      &_list,
+      &_reverse {
         background-color: $black;
-        overflow-y: auto;
-        position: static;
-        &.active{
-       bottom: unset;
       }
+      &_reverse {
+        margin-top: 0;
+        padding: 20px 0;
+        padding-left: 21px;
+      }
+      &_row {
+        padding-bottom: 20px;
+        bottom: 0;
+        top: 0;
+        height: 100vh;
+        overflow-y: scroll;
+        padding-bottom: 150px;
+        &.active {
+          bottom: unset;
+        }
       }
       &.active {
         transform: translateX(0%);
-        
       }
-      
     }
   }
 
@@ -225,11 +215,12 @@
       top: 130px;
       transition: all ease 1s;
       &_open {
-        top: -9%;
+        top: 6.9%;
         left: unset;
         left: -39.4%;
         transition: all ease 1s;
       }
+
       &.active {
         .aside_open {
           left: 0;
